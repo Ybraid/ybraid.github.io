@@ -1,1157 +1,2097 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
-xmlns:w="urn:schemas-microsoft-com:office:word"
-xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
-xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
-xmlns="http://www.w3.org/TR/REC-html40">
+<!DOCTYPE html>
+<html>
+<style>
+html {
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    color: #000
+}
 
-<head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=ProgId content=Word.Document>
-<meta name=Generator content="Microsoft Word 15">
-<meta name=Originator content="Microsoft Word 15">
-<link rel=File-List href="index_files/filelist.xml">
-<link rel=Edit-Time-Data href="index_files/editdata.mso">
-<!--[if !mso]>
-<style>
-v\:* {behavior:url(#default#VML);}
-o\:* {behavior:url(#default#VML);}
-w\:* {behavior:url(#default#VML);}
-.shape {behavior:url(#default#VML);}
+body,div,dl,dt,dd,ul,ol,li,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    margin-bottom: 8px
+}
+
+.nwsb {
+    display: none
+}
+
+a {
+    text-decoration: none
+}
+
+div.reply {
+    background-color: #f0e0d6;
+    border: 1px solid #fed6af;
+    border-left: none;
+    border-top: none
+}
+
+.click-me {
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 2px 5px;
+    position: absolute;
+    font-weight: 700;
+    z-index: 2;
+    white-space: nowrap
+}
+
+.yotsuba_new .click-me {
+    color: maroon;
+    background-color: #f0e0d6;
+    border: 2px solid #d9bfb7
+}
+
+.click-me:before {
+    content: "";
+    border-width: 0 6px 6px;
+    border-style: solid;
+    left: 50%;
+    margin-left: -6px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -6px
+}
+
+.yotsuba_new .click-me:before {
+    border-color: #d9bfb7 transparent
+}
+
+.click-me:after {
+    content: "";
+    border-width: 0 4px 4px;
+    top: -4px;
+    display: block;
+    left: 50%;
+    margin-left: -4px;
+    position: absolute;
+    width: 0;
+    height: 0
+}
+
+.yotsuba_new .click-me:after {
+    border-color: #f0e0d6 transparent;
+    border-style: solid
+}
+
+.adg-rects {
+    margin: 10px 0;
+    text-align: center
+}
+
+.adg,.adg-m {
+    overflow: hidden
+}
+
+.adg-rep .adg {
+    margin-left: 15px
+}
+
+.adp-228 {
+    margin: auto;
+    width: 728px;
+    height: 320px
+}
+
+.adp-90 {
+    margin: auto;
+    width: 728px;
+    height: 90px
+}
+
+.adp-j {
+    margin: auto;
+    width: 728px;
+    height: 102px
+}
+
+.adp-50 {
+    margin: auto;
+    width: 320px;
+    height: 50px
+}
+
+.adp-250 {
+    margin: auto;
+    width: 300px;
+    height: 250px
+}
+
+.adp-row {
+    display: inline-block;
+    margin: 0 10px
+}
+
+.bsa-cnt {
+    margin: 20px 0;
+    height: 90px;
+    text-align: center
+}
+
+@media only screen and (max-width: 640px) {
+    .bsa-cnt {
+        height:250px;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+}
+
+.adc-resp {
+    margin: auto;
+    width: 728px;
+    height: 228px;
+    overflow: hidden
+}
+
+@media only screen and (max-width: 480px) {
+    .adc-resp {
+        width:300px;
+        height: 300px
+    }
+}
+
+.party-cnt {
+    position: relative;
+    display: inline-block
+}
+
+.party-hat {
+    position: absolute;
+    pointer-events: none
+}
+
+.small .party-hat,.extended-small .party-hat {
+    width: 100px;
+    left: -10px;
+    margin-top: -55px
+}
+
+.large .party-hat,.extended-large .party-hat {
+    left: -15px;
+    margin-top: -95px
+}
+
+#disclaimer {
+    font-size: 14px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998
+}
+
+#disclaimer-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.25)
+}
+
+#disclaimer-modal {
+    z-index: 9999;
+    width: 320px;
+    top: 0;
+    left: 50%;
+    margin-left: -170px;
+    display: block;
+    padding: 10px;
+    position: relative;
+    background-color: #f0e0d6;
+    box-shadow: 0 0 5px rgba(0,0,0,.25)
+}
+
+#disclaimer ol {
+    margin-left: 20px;
+    padding: 0
+}
+
+#disclaimer li {
+    margin: 10px 0
+}
+
+#disclaimer h3 {
+    border-bottom: 1px solid #d9bfb7;
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center
+}
+
+#disclaimer-modal div {
+    margin-top: 10px;
+    text-align: center
+}
+
+#disclaimer-modal button {
+    margin: 0 10px
+}
+
+#disclaimer-accept {
+    font-weight: 700
+}
+
+#footer-links {
+    margin-top: 5px
+}
+
+.belowLeaderboard {
+    width: 728px;
+    max-width: 100%
+}
+
+.aboveMidAd {
+    width: 468px;
+    max-width: 100%
+}
+
+body.hasDropDownNav {
+    margin-top: 45px
+}
+
+#postFormError {
+    background-color: #e62020;
+    color: #fff;
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 5px;
+    text-shadow: 0 1px rgba(0,0,0,.2);
+    display: none;
+    margin-top: 3px
+}
+
+#postFormError a {
+    color: #fff
+}
+
+.painter-ctrl input[type=text],#qr-painter-ctrl input[type=text] {
+    width: 30px!important;
+    text-align: center
+}
+
+#bottomnav {
+    clear: both
+}
+
+.persistentNav,div#boardNavMobile {
+    padding: 2px 4px;
+    background-color: #f0e0d6;
+    overflow: hidden;
+    border-bottom: 2px solid #d9bfb7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9001;
+    font-size: 12px
+}
+
+div#boardNavMobile select,div#boardNavMobile option {
+    font-size: 11px
+}
+
+.autohide-nav {
+    transition: top .2s ease-in-out
+}
+
+div.boardSelect {
+    float: left
+}
+
+div.boardSelect>strong {
+    padding-right: 5px
+}
+
+div.pageJump {
+    float: right;
+    padding-right: 5px;
+    padding-top: 3px
+}
+
+.pageJump a {
+    text-decoration: none;
+    padding-right: 5px;
+    color: navy!important
+}
+
+.recaptchatable {
+    background-color: transparent!important;
+    border: none!important
+}
+
+.recaptcha_image_cell {
+    background-color: transparent!important
+}
+
+#g-recaptcha {
+    height: 78px
+}
+
+#recaptcha_div {
+    height: 107px;
+    width: 442px
+}
+
+#recaptcha_challenge_field {
+    width: 400px
+}
+
+.recaptcha_input_area {
+    padding: 0!important
+}
+
+#recaptcha_table tr:first-child {
+    height: auto!important
+}
+
+#recaptcha_table tr:first-child>td:not(:first-child) {
+    padding: 0 7px!important
+}
+
+#recaptcha_table tr:last-child td:last-child {
+    padding-bottom: 0!important
+}
+
+#recaptcha_table tr:last-child td:first-child {
+    padding-left: 0!important
+}
+
+#recaptcha_image {
+    cursor: pointer
+}
+
+#recaptcha_response_field {
+    width: 292px;
+    margin-right: 0!important;
+    font-size: 10pt!important
+}
+
+input:-moz-placeholder {
+    color: gray!important
+}
+
+#recaptcha_image {
+    border: 1px solid #aaa!important
+}
+
+#recaptcha_table tr>td:last-child {
+    display: none!important
+}
+
+#captchaContainer {
+    width: 343px;
+    height: 86px;
+    line-height: 99px;
+    overflow: hidden
+}
+
+#captchaContainer .placeholder {
+    font-style: italic;
+    padding-left: 5px
+}
+
+#content table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+.jpnFlag {
+    height: 11px;
+    width: 17px
+}
+
+fieldset,img {
+    border: 0
+}
+
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-style: normal;
+    font-weight: 400
+}
+
+li {
+    list-style: none
+}
+
+caption,th {
+    text-align: left
+}
+
+q:before,q:after {
+    content: ''
+}
+
+abbr,acronym {
+    border: 0;
+    font-variant: normal
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+input[type=text],input[type=password],textarea {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0
+}
+
+legend {
+    color: #000
+}
+
+ins {
+    text-decoration: none
+}
+
+body {
+    background: url(https://cdn.discordapp.com/attachments/164507443349422080/771242167678533662/fade.png) repeat-x scroll center top #ffe;
+    color: maroon;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 10pt;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+strong {
+    font-weight: 700
+}
+
+em {
+    font-style: italic
+}
+
+a,#absbot a,.button {
+    color: #00e
+}
+
+a:hover,#absbot a:hover,.button:hover {
+    color: red
+}
+
+hr {
+    clear: both;
+    border: none;
+    border-top: 1px solid #d9bfb7
+}
+
+code {
+    padding: 1px 5px;
+    background-color: #eee;
+    color: #000
+}
+
+kbd {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 0 #ccc,0 0 0 2px #fff inset;
+    font-family: monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 0 5px;
+    color: #000
+}
+
+p {
+    margin-bottom: 15px
+}
+
+input[type=text],input[type=password],textarea {
+    border: 1px solid #aaa;
+    font-size: 11px;
+    margin: 0 2px 0 0;
+    padding: 2px 4px 3px
+}
+
+input[type=text],textarea {
+    outline: none
+}
+
+input[type=text],input[type=password] {
+    margin: 0 2px;
+    padding: 1px
+}
+
+input:focus,textarea:focus {
+    border: 1px solid #ea8!important
+}
+
+#content input[type=checkbox] {
+    vertical-align: middle
+}
+
+#filters input[type=checkbox] {
+    display: inline-block;
+    margin: auto
+}
+
+img.topad,.topad>div,.topad a img {
+    width: 728px;
+    height: 90px;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto
+}
+
+img.middlead,.middlead>div,.middlead a img {
+    width: 468px;
+    height: 60px;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto
+}
+
+img.bottomad,.bottomad>div,.bottomad a img {
+    width: 728px;
+    height: 90px;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto
+}
+
+.button {
+    cursor: pointer;
+    border: none;
+    white-space: nowrap;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+.btn-wrap:before {
+    content: '['
+}
+
+.btn-wrap:after {
+    content: ']'
+}
+
+.clickbox {
+    margin-right: 3px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 10px;
+    display: block;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    text-decoration: none;
+    color: #000
+}
+
+.custom-rgb {
+    width: 45px
+}
+
+.abovePostForm {
+    width: 90%
+}
+
+.hidden {
+    display: none
+}
+
+#backdrop {
+    background-color: rgba(0,0,0,.25);
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100002
+}
+
+.panel {
+    position: absolute;
+    padding: 2px 5px 5px;
+    z-index: 100003;
+    font-size: 14px;
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+    background-color: #f0e0d6
+}
+
+.panel h4 {
+    font-size: 14px;
+    padding: 0;
+    margin: 10px 0 5px
+}
+
+.panelHeader {
+    border-bottom: 1px solid #d9bfb7;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    line-height: 14px
+}
+
+.extButton {
+    cursor: pointer
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-size: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: 5px
+}
+
+.closeIcon {
+    background-image: url(//s.4cdn.org/image/buttons/futaba/cross.png);
+    right: 5px
+}
+
+.helpIcon {
+    background-image: url(//s.4cdn.org/image/buttons/futaba/question.png);
+    right: 23px
+}
+
+.expandIcon {
+    background-image: url(//s.4cdn.org/image/buttons/futaba/post_expand_plus.png);
+    right: 23px
+}
+
+.collapseIcon {
+    background-image: url(//s.4cdn.org/image/buttons/futaba/post_expand_minus.png);
+    right: 23px
+}
+
+.watchIcon,.unwatchIcon {
+    height: 18px;
+    position: absolute;
+    width: 18px;
+    cursor: pointer;
+    visibility: hidden
+}
+
+.watchIcon {
+    background-image: url(//s.4cdn.org/image/buttons/futaba/watch_thread_off.png)
+}
+
+.unwatchIcon {
+    background-image: url(//s.4cdn.org/image/buttons/futaba/watch_thread_on.png)
+}
+
+.thread:hover .watchIcon,.thread:hover .unwatchIcon {
+    visibility: visible
+}
+
+.threadIcons {
+    display: inline;
+    height: 16px;
+    margin: 2px 0 0 -101px;
+    position: absolute;
+    width: 100px;
+    text-align: right
+}
+
+.threadIcon {
+    width: 16px;
+    height: 16px;
+    display: inline-block
+}
+
+.stickyIcon {
+    background-image: url(//s.4cdn.org/image/sticky.gif)
+}
+
+.closedIcon {
+    background-image: url(//s.4cdn.org/image/closed.gif)
+}
+
+.adminIcon {
+    background-image: url(//s.4cdn.org/image/adminicon.gif)
+}
+
+.founderIcon {
+    background-image: url(//s.4cdn.org/image/foundericon.gif)
+}
+
+.modIcon {
+    background-image: url(//s.4cdn.org/image/modicon.gif)
+}
+
+.developerIcon {
+    background-image: url(//s.4cdn.org/image/developericon.gif)
+}
+
+.managerIcon {
+    background-image: url(//s.4cdn.org/image/managericon.gif)
+}
+
+.imgdel {
+    padding: 20px 14px;
+    min-height: 0!important;
+    width: 127px;
+    height: 13px
+}
+
+.nofile {
+    padding: 20px 36px;
+    min-height: 0!important
+}
+
+.refreshIcon {
+    background-image: url(//s.4cdn.org/image/buttons/futaba/refresh.png)
+}
+
+.rotateIcon {
+    background-image: url(//s.4cdn.org/image/buttons/futaba/post_expand_rotate.gif)
+}
+
+@media(-webkit-min-device-pixel-ratio: 2.0),(min--moz-device-pixel-ratio:2),(min-resolution:2dppx) {
+    .closeIcon {
+        background-image:url(//s.4cdn.org/image/buttons/futaba/cross@2x.png)
+    }
+
+    .helpIcon {
+        background-image: url(//s.4cdn.org/image/buttons/futaba/question@2x.png)
+    }
+
+    .expandIcon {
+        background-image: url(//s.4cdn.org/image/buttons/futaba/post_expand_plus@2x.png);
+        background-size: 100%
+    }
+
+    .collapseIcon {
+        background-image: url(//s.4cdn.org/image/buttons/futaba/post_expand_minus@2x.png);
+        background-size: 100%
+    }
+
+    .stickyIcon {
+        background-image: url(//s.4cdn.org/image/sticky@2x.gif);
+        background-size: 100%
+    }
+
+    .closedIcon {
+        background-image: url(//s.4cdn.org/image/closed@2x.gif);
+        background-size: 100%
+    }
+
+    .adminIcon {
+        background-image: url(//s.4cdn.org/image/adminicon@2x.gif);
+        background-size: 100%
+    }
+
+    .modIcon {
+        background-image: url(//s.4cdn.org/image/modicon@2x.gif);
+        background-size: 100%
+    }
+
+    .developerIcon {
+        background-image: url(//s.4cdn.org/image/developericon@2x.gif);
+        background-size: 100%
+    }
+
+    .managerIcon {
+        background-image: url(//s.4cdn.org/image/managericon@2x.gif);
+        background-size: 100%
+    }
+
+    .refreshIcon {
+        background-image: url(//s.4cdn.org/image/buttons/futaba/refresh@2x.png);
+        background-size: 100%
+    }
+
+    .rotateIcon {
+        background-image: url(//s.4cdn.org/image/buttons/futaba/post_expand_rotate@2x.gif);
+        background-size: 100%
+    }
+
+    .watchIcon {
+        background-image: url(//s.4cdn.org/image/buttons/futaba/watch_thread_off@2x.png);
+        background-size: 100%
+    }
+
+    .unwatchIcon {
+        background-image: url(//s.4cdn.org/image/buttons/futaba/watch_thread_on@2x.png);
+        background-size: 100%
+    }
+}
+
+.clickset {
+    margin-bottom: 8px
+}
+
+.clickset li {
+    clear: both;
+    margin-bottom: 2px;
+    line-height: 20px
+}
+
+.inputset {
+    margin-bottom: 3px
+}
+
+.msg-error,.msg-ok {
+    border-radius: 3px;
+    padding: 1px 5px
+}
+
+.msg-ok {
+    background-color: #ffe;
+    color: #000
+}
+
+.msg-error {
+    background-color: #e62020;
+    color: #fff
+}
+
+.error {
+    color: red;
+    font-size: x-large;
+    font-weight: 700
+}
+
+#info {
+    float: left
+}
+
+#settings {
+    float: right;
+    text-align: right
+}
+
+#filtered-count,#hidden-count,#filtered-count-bottom,#hidden-count-bottom,#search-term,#search-term-bottom,#ordered-by {
+    font-weight: 700
+}
+
+#filtered-label,#hidden-label,#filtered-label-bottom,#hidden-label-bottom,#search-label,#search-label-bottom {
+    display: none
+}
+
+#qf-cnt {
+    display: none
+}
+
+#qf-clear {
+    text-decoration: none
+}
+
+#qf-box {
+    width: 75px;
+    margin-right: 5px
+}
+
+#boardNavDesktop {
+    color: #b86;
+    font-size: 9pt
+}
+
+#boardNavDesktop a {
+    color: maroon;
+    padding: 1px;
+    text-decoration: none
+}
+
+#boardNavDesktopFoot a:hover,#boardNavDesktop a:hover {
+    color: red
+}
+
+.navLinks .btn-wrap {
+    display: inline
+}
+
+#navtopright,#navbotright {
+    float: right
+}
+
+.navSmall {
+    font-size: 90%
+}
+
+#styleSwitcher {
+    float: right
+}
+
+#globalMessage {
+    color: red;
+    text-align: center
+}
+
+#toggleMsgBtn {
+    width: 18px;
+    height: 18px;
+    display: block;
+    cursor: pointer;
+    top: 5px;
+    float: left;
+    margin-bottom: 6px
+}
+
+div.boardBanner {
+    text-align: center;
+    clear: both
+}
+
+#bannerCnt {
+    border: 1px solid #800;
+    margin: 5px auto;
+    width: 728px;
+    height: 90px;
+    max-width: 100%
+}
+
+div.boardBanner>div.boardTitle {
+    font-family: Tahoma,sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-top: 0
+}
+
+div.boardBanner>div.boardSubtitle {
+    font-size: x-small
+}
+
+div#boardNavDesktopFoot {
+    font-size: 9pt;
+    color: #b86;
+    clear: both;
+    padding-top: 10px;
+    padding-bottom: 3px
+}
+
+.hasDropDownNav #navtopright {
+    display: none
+}
+
+#boardNavDesktop .pageJump {
+    padding: 0
+}
+
+#boardNavDesktop .pageJump a {
+    padding-right: 5px
+}
+
+div#boardNavDesktopFoot a {
+    font-weight: 400;
+    padding: 1px;
+    text-decoration: none;
+    color: maroon
+}
+
+div.homelink {
+    float: right
+}
+
+div#absbot {
+    text-align: center;
+    font-size: x-small!important;
+    padding-bottom: 4px;
+    padding-top: 10px;
+    color: #800;
+    clear: both
+}
+
+#theme {
+    width: 330px;
+    top: 60px;
+    left: 50%;
+    margin-left: -178px
+}
+
+.settings-field {
+    margin-top: 5px;
+    width: 100%
+}
+
+#theme-css {
+    font-family: dejavu sans mono,consolas,andale mono,lucida console,monospace;
+    width: 320px;
+    min-width: 320px
+}
+
+#theme-msg {
+    position: absolute;
+    margin-top: 4px
+}
+
+#theme-btns {
+    margin-top: 5px;
+    margin-bottom: 3px
+}
+
+#filters {
+    width: 380px;
+    top: 60px;
+    left: 50%;
+    margin-left: -190px
+}
+
+#filters-search {
+    position: absolute;
+    left: 4px;
+    width: 50px;
+    font-size: 11px;
+    padding: 0 2px
+}
+
+#filters-search:focus {
+    width: 85px
+}
+
+#filters .clickbox {
+    margin: auto
+}
+
+#filters-protip {
+    width: 570px;
+    top: 50px;
+    left: 50%;
+    margin-left: -295px;
+    padding-left: 10px;
+    padding-right: 10px
+}
+
+#filters-protip h4:before {
+    content: "Â»";
+    margin-right: 3px
+}
+
+#filters-protip h4 {
+    font-size: 15px
+}
+
+@media all and (max-width: 605px) {
+    #filters-protip {
+        left:0;
+        margin-left: 0
+    }
+}
+
+#filters-protip ul {
+    margin-bottom: 10px
+}
+
+#filters-protip li {
+    margin: 5px 0
+}
+
+#filter-palette {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 100004;
+    top: 0;
+    left: 0
+}
+
+#colorpicker {
+    position: fixed;
+    padding: 4px
+}
+
+#colorpicker table td {
+    padding: 2px;
+    text-align: center
+}
+
+#filter-rgb-ok {
+    float: right;
+    background-color: transparent
+}
+
+#filter-table {
+    width: 100%
+}
+
+#filter-table th {
+    font-weight: 700;
+    font-size: 11px;
+    min-width: 20px
+}
+
+#filter-table th,#filter-table td {
+    text-align: center
+}
+
+#filter-table tbody td {
+    padding: 8px 0 0
+}
+
+#filter-table tfoot td {
+    padding-top: 20px
+}
+
+#filter-color-table .clickbox {
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    margin: auto
+}
+
+.filter-pattern {
+    width: 140px
+}
+
+.filter-color:hover {
+    color: #000
+}
+
+.filter-hits {
+    font-size: 12px
+}
+
+.filter-boards {
+    width: 30px
+}
+
+#theme-msg,#filters-msg {
+    display: none
+}
+
+#threads {
+    padding: 20px 0;
+    text-align: center
+}
+
+.thread {
+    vertical-align: top;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: hidden;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 5px 0 3px;
+    position: relative
+}
+
+.thread a {
+    border: none
+}
+
+.thread img {
+    display: inline
+}
+
+.small .thread {
+    width: 165px
+}
+
+.large .thread {
+    width: 270px
+}
+
+.extended-small .thread {
+    width: 180px;
+    max-height: 320px
+}
+
+.extended-large .thread {
+    width: 270px;
+    max-height: 410px
+}
+
+.hl {
+    border-style: solid;
+    border-width: 3px
+}
+
+.pinned {
+    border: 3px dashed #34345c
+}
+
+.pinned:hover {
+    border-color: red
+}
+
+.thumb {
+    display: block;
+    margin: auto;
+    z-index: 2;
+    box-shadow: 0 0 5px rgba(0,0,0,.25);
+    min-height: 50px;
+    min-width: 50px
+}
+
+.meta {
+    cursor: help;
+    font-size: 11px;
+    line-height: 8px;
+    margin-top: 2px;
+    margin-bottom: 1px
+}
+
+.meta .postMenuBtn {
+    position: absolute;
+    margin-top: -1px;
+    display: none
+}
+
+.thread:hover .meta .postMenuBtn {
+    display: inline-block
+}
+
+.teaser {
+    display: none;
+    padding: 0 15px
+}
+
+.extended-small .teaser,.extended-large .teaser {
+    display: block
+}
+
+.teaser s {
+    background-color: #000;
+    color: #000;
+    text-decoration: none
+}
+
+.teaser s:focus,.teaser s:hover {
+    color: #fff
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.clear {
+    clear: both
+}
+
+.close {
+    margin-left: 3px
+}
+
+.center {
+    text-align: center;
+    margin: auto
+}
+
+.mobile {
+    display: none
+}
+
+#absbot a {
+    text-decoration: underline
+}
+
+#threadWatcher {
+    max-width: 265px;
+    display: block;
+    position: absolute;
+    background-color: #f0e0d6;
+    border-color: maroon #d9bfb7 #d9bfb7 maroon;
+    border-image: none;
+    border-right: 1px solid #d9bfb7;
+    border-style: none solid solid none;
+    border-width: medium 1px 1px medium;
+    padding: 3px
+}
+
+#twHeader {
+    font-weight: 700;
+    text-align: center;
+    height: 17px;
+    cursor: move;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none
+}
+
+#twPrune {
+    position: relative;
+    top: 0;
+    margin-left: 3px;
+    margin-top: -1px;
+    float: right
+}
+
+#watchList {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    display: block;
+    max-height: 100vh;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none
+}
+
+#watchList li:first-child {
+    margin-top: 3px;
+    padding-top: 2px;
+    border-top: 1px solid #d9bfb7
+}
+
+#watchList a {
+    text-decoration: none
+}
+
+#watchList li {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.hasNewReplies {
+    font-weight: 700
+}
+
+.hasYouReplies {
+    font-style: italic
+}
+
+.archivelink {
+    opacity: .5
+}
+
+.deadlink {
+    text-decoration: line-through
+}
+
+.pointer {
+    cursor: pointer
+}
+
+#first-run {
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: -7px;
+    padding: 2px 5px;
+    position: absolute;
+    font-weight: 700;
+    color: maroon;
+    background-color: #f0e0d6;
+    border: 2px solid #d9bfb7
+}
+
+#first-run:before {
+    content: "";
+    border-width: 0 6px 6px;
+    border-style: solid;
+    left: 50%;
+    margin-left: -6px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -6px;
+    border-color: #d9bfb7 transparent
+}
+
+#first-run:after {
+    content: "";
+    border-width: 0 4px 4px;
+    top: -4px;
+    display: block;
+    left: 50%;
+    margin-left: -4px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: #f0e0d6 transparent;
+    border-style: solid
+}
+
+#post-preview {
+    position: absolute;
+    background-color: #181f24;
+    border-radius: 3px;
+    padding: 5px 8px 4px;
+    z-index: 100000;
+    word-wrap: break-word;
+    white-space: pre-line;
+    max-width: 500px;
+    color: #dedede;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 10pt
+}
+
+.post-author {
+    color: #00a550;
+    font-weight: 700
+}
+
+.post-subject {
+    color: #cc1105;
+    font-weight: 700
+}
+
+.post-tripcode {
+    color: #00a550;
+    font-weight: 400
+}
+
+.post-teaser {
+    margin: 3px 0 0;
+    padding: 0
+}
+
+.post-page {
+    font-size: 90%;
+    color: #7d807e;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: text-top;
+    margin-left: 3px
+}
+
+.post-page:before {
+    content: '('
+}
+
+.post-page:after {
+    content: ')'
+}
+
+.post-last {
+    color: #bbbfbd;
+    font-size: 90%;
+    margin-top: 3px
+}
+
+.admin-capcode {
+    color: red
+}
+
+.founder-capcode {
+    color: #117743
+}
+
+.mod-capcode {
+    color: purple
+}
+
+.developer-capcode {
+    color: #0000f0
+}
+
+.manager-capcode {
+    color: #ff0080
+}
+
+.verified-capcode {
+    color: #007fff
+}
+
+#enable-mobile {
+    font-size: small!important
+}
+
+#disable-mobile {
+    font-size: small!important;
+    display: none!important
+}
+
+table {
+    border-spacing: 1px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+table.postForm>tbody>tr>td:first-child {
+    background-color: #ea8;
+    color: #800;
+    font-weight: 700;
+    border: 1px solid #800;
+    padding: 0 5px;
+    font-size: 10pt
+}
+
+tr.rules td {
+    border: 0!important;
+    background-color: transparent!important;
+    font-weight: 400!important
+}
+
+td {
+    margin: 0;
+    padding: 0;
+    font-size: 10pt
+}
+
+#postForm input[type=text],#postForm input[type=password],table.postForm>tbody textarea,#recaptcha_response_field {
+    margin: 0;
+    margin-right: 2px;
+    padding: 2px 4px 3px;
+    border: 1px solid #aaa;
+    outline: none;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 10pt
+}
+
+#recaptcha_response_field:not(:focus) {
+    border: 1px solid #aaa!important
+}
+
+table.postForm>tbody>tr>td>input[type=text] {
+    width: 244px
+}
+
+table.postForm>tbody>tr>td>input[name=subject] {
+    width: 300px
+}
+
+.postblock {
+    background-color: #ea8;
+    color: #800;
+    font-weight: 700;
+    padding: 0 5px
+}
+
+.passNotice {
+    font-size: smaller;
+    padding-left: 6px
+}
+
+.password {
+    font-size: smaller
+}
+
+input[type=password] {
+    text-align: center;
+    width: 50px
+}
+
+.rules {
+    margin-top: 5px
+}
+
+.rules li {
+    font-size: 11px;
+    list-style: none outside none
+}
+
+.rules li:before {
+    content: "â€¢ "
+}
+
+#togglePostForm {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: 700
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    tbody textarea {
+        margin-bottom:-3px!important
+    }
+}
+
+.text_only #threads table {
+    width: 80%;
+    border-collapse: separate;
+    border-spacing: 2px
+}
+
+.text_only #threads th {
+    font-weight: 700;
+    padding: 4px 2px;
+    text-align: center
+}
+
+.text_only #threads td {
+    padding: 4px 2px
+}
+
+.text_only #threads .txt-sub {
+    text-align: left
+}
+
+.text_only .hl {
+    border: none
+}
+
+.text_only .pinned td:first-child {
+    box-shadow: -1px 0 #000
+}
+
+.txt-ctrl {
+    width: 25px
+}
+
+.txt-no {
+    width: 20px
+}
+
+.txt-rep {
+    width: 100px
+}
+
+.txt-date {
+    width: 200px
+}
+
+@media only screen and (max-width: 480px) {
+    .txt-ctrl,.txt-date {
+        display:none
+    }
+
+    .text_only #threads table {
+        width: 100%
+    }
+}
+
+.postMenuBtn {
+    margin-left: 5px;
+    text-decoration: none;
+    line-height: 1em;
+    display: inline-block;
+    -webkit-transition: -webkit-transform .1s;
+    -moz-transition: -moz-transform .1s;
+    transition: transform .1s;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    outline: none;
+    opacity: .5
+}
+
+.postMenuBtn:hover {
+    opacity: 1
+}
+
+.postMenuBtn {
+    color: navy
+}
+
+.menuOpen {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+
+.dd-menu {
+    position: absolute;
+    font-size: 12px;
+    line-height: 1.3em
+}
+
+.dd-menu a {
+    text-decoration: none;
+    color: inherit!important;
+    display: block
+}
+
+.dd-menu ul {
+    background-color: #f0e0d6;
+    border: 1px solid #d9bfb7;
+    border-right-width: 2px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap
+}
+
+.dd-menu ul ul {
+    display: none;
+    position: absolute
+}
+
+.dd-menu li {
+    cursor: pointer;
+    position: relative;
+    padding: 2px 4px;
+    vertical-align: middle;
+    border-bottom: 1px solid #d9bfb7
+}
+
+.dd-menu li:hover {
+    background-color: #ffe
+}
+
+.dd-menu li:hover ul {
+    display: block;
+    left: 100%;
+    margin-top: -3px
+}
+
+.dd-menu.dd-menu-left li:hover ul {
+    left: auto;
+    right: 100%
+}
+
+.ad-plea {
+    margin-top: 2px;
+    text-align: center;
+    font-size: smaller
+}
+
+#customMenu {
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    padding: 2px
+}
+
+#customMenu .reply {
+    border: 0
+}
+
+#customMenuBox {
+    margin: 0 auto 5px;
+    width: 385px;
+    padding: 2px 4px 3px;
+    font-size: 10pt
+}
+
+.boardSelect .customBoardList,.boardSelect .custom-menu-ctrl {
+    color: #89a
+}
+
+.boardSelect .custom-menu-ctrl,.boardSelect .customBoardList {
+    margin-left: 10px
+}
+
+.boardSelect .custom-menu-ctrl {
+    display: none
+}
+
+.boardSelect:hover .custom-menu-ctrl {
+    display: inline
+}
+
+.persistentNav .boardList a,.persistentNav .customBoardList a,#boardNavMobile .boardSelect a {
+    text-decoration: none
+}
+
+#blotter {
+    width: 468px;
+    margin: auto
+}
+
+#blotter td {
+    vertical-align: top;
+    font-size: 11px
+}
+
+.blotter-date {
+    width: 50px;
+    text-align: center
+}
+
+#blotter tfoot {
+    text-align: right
+}
+
+.redtxt {
+    color: red
+}
+
+#blotter-msgs s {
+    background-color: inherit!important;
+    color: inherit!important;
+    text-decoration: line-through
+}
+
+#postForm {
+    width: 468px;
+    display: none
+}
+
+#togglePostFormLink {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center
+}
+
+#postForm textarea {
+    width: 292px
+}
+
+.boardTitle {
+	font-family: Tahoma,sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-top: 0;
+	color: maroon;
+	text-align: center;
+}
+.body {
+    color: maroon;
+    font-family: arial,helvetica,sans-serif;
+    font-size: 10pt;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+#grad {
+	height: 250px;
+	overflow: auto; 
+    background: linear-gradient(to bottom, #bb8866 -50%, #ffffee 100%);
+}
 </style>
-<![endif]-->
-<title>Certificate_Employee of the Month_AB - v1</title>
-<!--[if gte mso 9]><xml>
- <o:DocumentProperties>
-  <o:Author>darby songolo</o:Author>
-  <o:Template>{3A8368CB-0C13-401C-88FB-674694149EC3}tf78500733_win32.dotx</o:Template>
-  <o:LastAuthor>darby songolo</o:LastAuthor>
-  <o:Revision>2</o:Revision>
-  <o:TotalTime>10</o:TotalTime>
-  <o:Created>2020-10-29T02:14:00Z</o:Created>
-  <o:LastSaved>2020-10-29T02:14:00Z</o:LastSaved>
-  <o:Pages>1</o:Pages>
-  <o:Words>15</o:Words>
-  <o:Characters>87</o:Characters>
-  <o:Lines>1</o:Lines>
-  <o:Paragraphs>1</o:Paragraphs>
-  <o:CharactersWithSpaces>101</o:CharactersWithSpaces>
-  <o:Version>16.00</o:Version>
- </o:DocumentProperties>
- <o:CustomDocumentProperties>
-  <o:Creator dt:dt="string">Adobe Illustrator CC 2015 (Macintosh)</o:Creator>
-  <o:ContentTypeId dt:dt="string">0x010100DEEA25CC0A0AC24199CDC46C25B8B0BC</o:ContentTypeId>
- </o:CustomDocumentProperties>
- <o:OfficeDocumentSettings>
-  <o:AllowPNG/>
- </o:OfficeDocumentSettings>
-</xml><![endif]-->
-<link rel=dataStoreItem href="index_files/item0013.xml"
-target="index_files/props014.xml">
-<link rel=dataStoreItem href="index_files/item0015.xml"
-target="index_files/props016.xml">
-<link rel=dataStoreItem href="index_files/item0017.xml"
-target="index_files/props018.xml">
-<link rel=themeData href="index_files/themedata.thmx">
-<link rel=colorSchemeMapping href="index_files/colorschememapping.xml">
-<!--[if gte mso 9]><xml>
- <w:WordDocument>
-  <w:SpellingState>Clean</w:SpellingState>
-  <w:GrammarState>Clean</w:GrammarState>
-  <w:AttachedTemplate
-   HRef="C:\Users\darby\AppData\Local\Microsoft\Office\16.0\DTS\en-US{92F43DD1-0698-4D48-AE90-5799F4CC720B}\{3A8368CB-0C13-401C-88FB-674694149EC3}tf78500733_win32.dotx"></w:AttachedTemplate>
-  <w:TrackMoves>false</w:TrackMoves>
-  <w:TrackFormatting/>
-  <w:PunctuationKerning/>
-  <w:DrawingGridHorizontalSpacing>5.5 pt</w:DrawingGridHorizontalSpacing>
-  <w:DrawingGridVerticalSpacing>14.95 pt</w:DrawingGridVerticalSpacing>
-  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
-  <w:ValidateAgainstSchemas>false</w:ValidateAgainstSchemas>
-  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
-  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
-  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
-  <w:DoNotUnderlineInvalidXML/>
-  <w:DoNotPromoteQF/>
-  <w:LidThemeOther>EN-US</w:LidThemeOther>
-  <w:LidThemeAsian>JA</w:LidThemeAsian>
-  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
-  <w:DoNotShadeFormData/>
-  <w:StyleSortMethod>0</w:StyleSortMethod>
-  <w:Compatibility>
-   <w:ULTrailSpace/>
-   <w:DoNotExpandShiftReturn/>
-   <w:AdjustLineHeightInTable/>
-   <w:BreakWrappedTables/>
-   <w:SnapToGridInCell/>
-   <w:WrapTextWithPunct/>
-   <w:UseAsianBreakRules/>
-   <w:DontGrowAutofit/>
-   <w:SplitPgBreakAndParaMark/>
-   <w:EnableOpenTypeKerning/>
-   <w:DontFlipMirrorIndents/>
-   <w:OverrideTableStyleHps/>
-  </w:Compatibility>
-  <w:DoNotOptimizeForBrowser/>
-  <m:mathPr>
-   <m:mathFont m:val="Cambria Math"/>
-   <m:brkBin m:val="before"/>
-   <m:brkBinSub m:val="&#45;-"/>
-   <m:smallFrac m:val="off"/>
-   <m:dispDef/>
-   <m:lMargin m:val="0"/>
-   <m:rMargin m:val="0"/>
-   <m:defJc m:val="centerGroup"/>
-   <m:wrapIndent m:val="1440"/>
-   <m:intLim m:val="subSup"/>
-   <m:naryLim m:val="undOvr"/>
-  </m:mathPr></w:WordDocument>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
-  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
-  LatentStyleCount="376">
-  <w:LsdException Locked="false" Priority="1" Name="Normal"/>
-  <w:LsdException Locked="false" Priority="9" Name="heading 1"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
-  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 6"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 7"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 8"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index 9"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 1"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 2"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 3"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 4"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 5"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 6"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 7"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 8"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" Name="toc 9"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Normal Indent"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="footnote text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="annotation text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="header"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="footer"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="index heading"/>
-  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="table of figures"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="envelope address"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="envelope return"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="footnote reference"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="annotation reference"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="line number"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="page number"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="endnote reference"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="endnote text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="table of authorities"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="macro"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="toa heading"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Bullet 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Number 5"/>
-  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Closing"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Signature"/>
-  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
-   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
-  <w:LsdException Locked="false" Priority="1" SemiHidden="true" QFormat="true"
-   Name="Body Text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text Indent"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="List Continue 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Message Header"/>
-  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Salutation"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Date"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text First Indent"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text First Indent 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Note Heading"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text Indent 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Body Text Indent 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Block Text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Hyperlink"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="FollowedHyperlink"/>
-  <w:LsdException Locked="false" Priority="22" SemiHidden="true" Name="Strong"/>
-  <w:LsdException Locked="false" Priority="20" SemiHidden="true" Name="Emphasis"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Document Map"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Plain Text"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="E-mail Signature"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Top of Form"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Bottom of Form"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Normal (Web)"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Acronym"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Address"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Cite"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Code"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Definition"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Keyboard"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Preformatted"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Sample"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Typewriter"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="HTML Variable"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="annotation subject"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="No List"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Outline List 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Outline List 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Outline List 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Simple 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Simple 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Simple 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Classic 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Classic 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Classic 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Classic 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Colorful 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Colorful 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Colorful 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Columns 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 6"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 7"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Grid 8"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 4"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 5"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 6"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 7"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table List 8"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table 3D effects 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table 3D effects 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table 3D effects 3"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Contemporary"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Elegant"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Professional"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Subtle 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Subtle 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Web 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Table Web 2"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Balloon Text"/>
-  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
-  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
-  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
-   Name="No Spacing"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
-  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
-  <w:LsdException Locked="false" Priority="1" Name="List Paragraph"/>
-  <w:LsdException Locked="false" Priority="29" SemiHidden="true" Name="Quote"/>
-  <w:LsdException Locked="false" Priority="30" SemiHidden="true"
-   Name="Intense Quote"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
-  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
-  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
-  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
-  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
-  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
-  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
-  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
-  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
-  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
-  <w:LsdException Locked="false" Priority="19" SemiHidden="true"
-   Name="Subtle Emphasis"/>
-  <w:LsdException Locked="false" Priority="21" SemiHidden="true"
-   Name="Intense Emphasis"/>
-  <w:LsdException Locked="false" Priority="31" SemiHidden="true"
-   Name="Subtle Reference"/>
-  <w:LsdException Locked="false" Priority="32" SemiHidden="true"
-   Name="Intense Reference"/>
-  <w:LsdException Locked="false" Priority="33" SemiHidden="true"
-   Name="Book Title"/>
-  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
-   UnhideWhenUsed="true" Name="Bibliography"/>
-  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
-   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
-  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
-  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
-  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
-  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
-  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
-  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
-  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
-  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
-  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 1"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 1"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 1"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 2"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 2"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 2"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 3"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 3"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 3"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 4"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 4"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 4"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 5"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 5"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 5"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="Grid Table 1 Light Accent 6"/>
-  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
-  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
-  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="Grid Table 6 Colorful Accent 6"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="Grid Table 7 Colorful Accent 6"/>
-  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
-  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
-  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 1"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 1"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 1"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 2"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 2"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 2"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 3"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 3"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 3"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 4"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 4"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 4"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 5"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 5"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 5"/>
-  <w:LsdException Locked="false" Priority="46"
-   Name="List Table 1 Light Accent 6"/>
-  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
-  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
-  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
-  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
-  <w:LsdException Locked="false" Priority="51"
-   Name="List Table 6 Colorful Accent 6"/>
-  <w:LsdException Locked="false" Priority="52"
-   Name="List Table 7 Colorful Accent 6"/>
-  <w:LsdException Locked="false" SemiHidden="true" Name="Mention"/>
-  <w:LsdException Locked="false" SemiHidden="true" Name="Smart Hyperlink"/>
-  <w:LsdException Locked="false" SemiHidden="true" Name="Hashtag"/>
-  <w:LsdException Locked="false" SemiHidden="true" Name="Unresolved Mention"/>
-  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
-   Name="Smart Link"/>
- </w:LatentStyles>
-</xml><![endif]-->
-<link rel=plchdr href="index_files/plchdr.html">
-<style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
-@font-face
-	{font-family:Georgia;
-	panose-1:2 4 5 2 5 4 5 2 3 3;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:647 0 0 0 159 0;}
-@font-face
-	{font-family:"Century Schoolbook";
-	panose-1:2 4 6 4 5 5 5 2 3 4;
-	mso-font-charset:0;
-	mso-generic-font-family:roman;
-	mso-font-pitch:variable;
-	mso-font-signature:647 0 0 0 159 0;}
-@font-face
-	{font-family:Georgia-BoldItalic;
-	mso-font-alt:Georgia;
-	mso-font-charset:0;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:647 0 0 0 159 0;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-priority:1;
-	mso-style-unhide:no;
-	mso-style-parent:"";
-	margin:0in;
-	text-align:center;
-	mso-pagination:none;
-	mso-layout-grid-align:none;
-	text-autospace:none;
-	font-size:14.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	mso-fareast-language:EN-US;
-	font-style:italic;}
-p.MsoHeader, li.MsoHeader, div.MsoHeader
-	{mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-unhide:no;
-	mso-style-link:"Header Char";
-	margin:0in;
-	text-align:center;
-	mso-pagination:none;
-	tab-stops:center 3.25in right 6.5in;
-	mso-layout-grid-align:none;
-	text-autospace:none;
-	font-size:14.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	mso-fareast-language:EN-US;
-	font-style:italic;}
-p.MsoFooter, li.MsoFooter, div.MsoFooter
-	{mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-unhide:no;
-	mso-style-link:"Footer Char";
-	margin:0in;
-	text-align:center;
-	mso-pagination:none;
-	tab-stops:center 3.25in right 6.5in;
-	mso-layout-grid-align:none;
-	text-autospace:none;
-	font-size:14.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	mso-fareast-language:EN-US;
-	font-style:italic;}
-p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-priority:10;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"Body Text";
-	mso-style-link:"Title Char";
-	mso-style-next:Normal;
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:6.0pt;
-	margin-left:0in;
-	text-align:center;
-	mso-pagination:none;
-	mso-layout-grid-align:none;
-	punctuation-wrap:simple;
-	text-autospace:none;
-	mso-line-break-override:restrictions;
-	font-size:58.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:major-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:major-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	mso-fareast-language:EN-US;
-	font-style:italic;
-	mso-bidi-font-style:normal;}
-p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
-	{mso-style-noshow:yes;
-	mso-style-priority:1;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-link:"Body Text Char";
-	margin:0in;
-	text-align:center;
-	mso-pagination:none;
-	mso-layout-grid-align:none;
-	text-autospace:none;
-	font-size:14.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:minor-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	mso-fareast-language:EN-US;}
-p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
-	{mso-style-priority:11;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"Body Text";
-	mso-style-link:"Subtitle Char";
-	mso-style-next:Normal;
-	margin-top:6.0pt;
-	margin-right:0in;
-	margin-bottom:24.0pt;
-	margin-left:0in;
-	text-align:center;
-	mso-pagination:none;
-	mso-layout-grid-align:none;
-	punctuation-wrap:simple;
-	text-autospace:none;
-	mso-line-break-override:restrictions;
-	font-size:29.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:major-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:major-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	text-transform:uppercase;
-	mso-fareast-language:EN-US;
-	font-style:italic;
-	mso-bidi-font-style:normal;}
-span.MsoPlaceholderText
-	{mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-unhide:no;
-	color:gray;}
-p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
-	{mso-style-noshow:yes;
-	mso-style-priority:1;
-	mso-style-unhide:no;
-	margin:0in;
-	text-align:center;
-	mso-pagination:none;
-	mso-layout-grid-align:none;
-	text-autospace:none;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;
-	mso-fareast-font-family:"Times New Roman";
-	color:#2B3990;
-	mso-themecolor:accent1;
-	mso-fareast-language:EN-US;
-	font-style:italic;}
-span.BodyTextChar
-	{mso-style-name:"Body Text Char";
-	mso-style-noshow:yes;
-	mso-style-priority:1;
-	mso-style-unhide:no;
-	mso-style-locked:yes;
-	mso-style-link:"Body Text";
-	mso-ansi-font-size:14.0pt;
-	mso-bidi-font-size:14.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:minor-latin;
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;}
-p.TableParagraph, li.TableParagraph, div.TableParagraph
-	{mso-style-name:"Table Paragraph";
-	mso-style-noshow:yes;
-	mso-style-priority:1;
-	mso-style-unhide:no;
-	margin:0in;
-	text-align:center;
-	mso-pagination:none;
-	mso-layout-grid-align:none;
-	text-autospace:none;
-	font-size:12.0pt;
-	font-family:"Times New Roman",serif;
-	mso-fareast-font-family:"Times New Roman";
-	color:#2B3990;
-	mso-themecolor:accent1;
-	mso-fareast-language:EN-US;
-	font-style:italic;}
-span.HeaderChar
-	{mso-style-name:"Header Char";
-	mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-unhide:no;
-	mso-style-locked:yes;
-	mso-style-link:Header;
-	mso-ansi-font-size:14.0pt;
-	mso-bidi-font-size:14.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:minor-latin;
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	font-style:italic;}
-span.FooterChar
-	{mso-style-name:"Footer Char";
-	mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-unhide:no;
-	mso-style-locked:yes;
-	mso-style-link:Footer;
-	mso-ansi-font-size:14.0pt;
-	mso-bidi-font-size:14.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:minor-latin;
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:minor-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	font-style:italic;}
-span.TitleChar
-	{mso-style-name:"Title Char";
-	mso-style-priority:10;
-	mso-style-unhide:no;
-	mso-style-locked:yes;
-	mso-style-link:Title;
-	mso-ansi-font-size:58.0pt;
-	mso-bidi-font-size:58.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:major-latin;
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:major-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	font-style:italic;
-	mso-bidi-font-style:normal;}
-span.SubtitleChar
-	{mso-style-name:"Subtitle Char";
-	mso-style-priority:11;
-	mso-style-unhide:no;
-	mso-style-locked:yes;
-	mso-style-link:Subtitle;
-	mso-ansi-font-size:29.0pt;
-	mso-bidi-font-size:29.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:major-latin;
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:major-latin;
-	mso-bidi-font-family:Georgia;
-	color:#2B3990;
-	mso-themecolor:accent1;
-	text-transform:uppercase;
-	font-style:italic;
-	mso-bidi-font-style:normal;}
-p.Name, li.Name, div.Name
-	{mso-style-name:Name;
-	mso-style-priority:1;
-	mso-style-unhide:no;
-	mso-style-qformat:yes;
-	mso-style-parent:"Body Text";
-	margin-top:.25in;
-	margin-right:0in;
-	margin-bottom:.25in;
-	margin-left:0in;
-	text-align:center;
-	mso-pagination:none;
-	mso-layout-grid-align:none;
-	punctuation-wrap:simple;
-	text-autospace:none;
-	mso-line-break-override:restrictions;
-	font-size:38.0pt;
-	font-family:"Century Schoolbook",serif;
-	mso-ascii-font-family:"Century Schoolbook";
-	mso-ascii-theme-font:major-latin;
-	mso-fareast-font-family:"Times New Roman";
-	mso-hansi-font-family:"Century Schoolbook";
-	mso-hansi-theme-font:major-latin;
-	mso-bidi-font-family:Georgia-BoldItalic;
-	color:#414042;
-	mso-themecolor:text2;
-	mso-fareast-language:EN-US;
-	font-weight:bold;
-	font-style:italic;
-	mso-bidi-font-style:normal;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	mso-default-props:yes;
-	font-size:10.0pt;
-	mso-ansi-font-size:10.0pt;
-	mso-bidi-font-size:10.0pt;
-	mso-fareast-language:EN-US;}
- /* Page Definitions */
- @page
-	{mso-page-border-surround-header:no;
-	mso-page-border-surround-footer:no;
-	mso-footnote-separator:url("index_files/header.html") fs;
-	mso-footnote-continuation-separator:url("index_files/header.html") fcs;
-	mso-endnote-separator:url("index_files/header.html") es;
-	mso-endnote-continuation-separator:url("index_files/header.html") ecs;}
-@page WordSection1
-	{size:11.0in 8.5in;
-	mso-page-orientation:landscape;
-	margin:56.9pt 1.0in .25in 1.0in;
-	mso-header-margin:.5in;
-	mso-footer-margin:.5in;
-	mso-header:url("index_files/header.html") h1;
-	mso-paper-source:0;}
-div.WordSection1
-	{page:WordSection1;}
--->
-</style>
-<!--[if gte mso 10]>
-<style>
- /* Style Definitions */
- table.MsoNormalTable
-	{mso-style-name:"Table Normal";
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	mso-style-noshow:yes;
-	mso-style-priority:99;
-	mso-style-parent:"";
-	mso-padding-alt:0in 5.4pt 0in 5.4pt;
-	mso-para-margin:0in;
-	mso-pagination:widow-orphan;
-	font-size:10.0pt;
-	font-family:"Times New Roman",serif;
-	mso-fareast-language:EN-US;}
-table.MsoTableGrid
-	{mso-style-name:"Table Grid";
-	mso-tstyle-rowband-size:0;
-	mso-tstyle-colband-size:0;
-	mso-style-priority:39;
-	mso-style-unhide:no;
-	border:solid windowtext 1.0pt;
-	mso-border-alt:solid windowtext .5pt;
-	mso-padding-alt:0in 5.4pt 0in 5.4pt;
-	mso-border-insideh:.5pt solid windowtext;
-	mso-border-insidev:.5pt solid windowtext;
-	mso-para-margin:0in;
-	mso-pagination:widow-orphan;
-	font-size:10.0pt;
-	font-family:"Times New Roman",serif;
-	mso-fareast-language:EN-US;}
-</style>
-<![endif]--><!--[if gte mso 9]><xml>
- <o:shapedefaults v:ext="edit" spidmax="2076"/>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <o:shapelayout v:ext="edit">
-  <o:idmap v:ext="edit" data="1"/>
- </o:shapelayout></xml><![endif]-->
 </head>
-
-<body lang=EN-US style='tab-interval:.5in;word-wrap:break-word'>
-
-<div class=WordSection1>
-
-<div align=center>
-
-<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
- style='width:100.0%;border-collapse:collapse;mso-yfti-tbllook:1536;mso-padding-alt:
- 0in 5.4pt 0in 5.4pt'>
- <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;height:166.2pt'>
-  <td width=2037 colspan=3 valign=bottom style='width:1527.85pt;padding:0in 5.4pt 0in 5.4pt;
-  height:166.2pt'>
-  <p class=MsoTitle><b><span style='mso-bidi-font-style:italic'>Congratulations</span><o:p></o:p></b></p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:1'>
-  <td width=2037 colspan=3 valign=top style='width:1527.85pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=MsoSubtitle>Janny of the month</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:2'>
-  <w:Sdt ShowingPlcHdr="t" Temporary="t"
-   DocPart="9308580236E14E59BB9E4EB74F5287F3" ID="-1511144004">
-   <td width=2037 colspan=3 valign=top style='width:1527.85pt;padding:0in 5.4pt 0in 5.4pt'>
-   <p class=MsoNormal>awarded to<o:p></o:p><w:sdtPr></w:sdtPr></p>
-   </td>
-  </w:Sdt>
- </tr>
- <tr style='mso-yfti-irow:3'>
-  <td width=2037 colspan=3 valign=top style='width:1527.85pt;padding:0in 5.4pt 0in 5.4pt'>
-  <p class=Name>You</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:4;height:82.6pt'>
-  <td width=2037 colspan=3 style='width:1527.85pt;padding:0in 5.4pt 0in 5.4pt;
-  height:82.6pt'>
-  <p class=MsoNormal>In recognition of you working for free</p>
-  </td>
- </tr>
- <tr style='mso-yfti-irow:5;height:51.55pt;mso-row-margin-right:1167.1pt'>
-  <td width=127 valign=bottom style='width:95.5pt;padding:0in 5.4pt 0in 5.4pt;
-  height:51.55pt'>
-  <p class=MsoNormal align=left style='text-align:left'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td width=354 valign=bottom style='width:265.25pt;padding:0in 5.4pt 0in 5.4pt;
-  height:51.55pt'>
-  <p class=MsoNormal align=left style='text-align:left'><o:p>&nbsp;</o:p></p>
-  </td>
-  <td style='mso-cell-special:placeholder;border:none;padding:0in 0in 0in 0in'
-  width=1556><p class='MsoNormal'>&nbsp;</td>
- </tr>
- <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes;height:33.3pt;mso-row-margin-right:
-  1432.35pt'>
-  <td width=127 style='width:95.5pt;padding:0in 5.4pt 0in 5.4pt;height:33.3pt'>
-  <p class=MsoNormal><o:p>&nbsp;</o:p></p>
-  </td>
-  <td style='mso-cell-special:placeholder;border:none;padding:0in 0in 0in 0in'
-  width=1910 colspan=2><p class='MsoNormal'>&nbsp;</td>
- </tr>
-</table>
-
-</div>
-
-<p class=MsoBodyText><o:p>&nbsp;</o:p></p>
-
-</div>
-
+<body class="nws is_catalog board_pol">
+        <div id="topnav" class="boardnav">
+            <div id="boardNavDesktop" class="desktop">
+                <span class="boardList">
+                    [<a href="//boards.4channel.org/a/catalog" title="Anime & Manga">a</a>
+                    / <a href="/b/catalog" title="Random">b</a>
+                    / <a href="//boards.4channel.org/c/catalog" title="Anime/Cute">c</a>
+                    / <a href="/d/catalog" title="Hentai/Alternative">d</a>
+                    / <a href="/e/catalog" title="Ecchi">e</a>
+                    / <a href="/f/" title="Flash">f</a>
+                    / <a href="//boards.4channel.org/g/catalog" title="Technology">g</a>
+                    / <a href="/gif/catalog" title="Adult GIF">gif</a>
+                    / <a href="/h/catalog" title="Hentai">h</a>
+                    / <a href="/hr/catalog" title="High Resolution">hr</a>
+                    / <a href="//boards.4channel.org/k/catalog" title="Weapons">k</a>
+                    / <a href="//boards.4channel.org/m/catalog" title="Mecha">m</a>
+                    / <a href="//boards.4channel.org/o/catalog" title="Auto">o</a>
+                    / <a href="//boards.4channel.org/p/catalog" title="Photo">p</a>
+                    / <a href="/r/catalog" title="Adult Requests">r</a>
+                    / <a href="/s/catalog" title="Sexy Beautiful Women">s</a>
+                    / <a href="/t/catalog" title="Torrents">t</a>
+                    / <a href="/u/catalog" title="Yuri">u</a>
+                    / <a href="//boards.4channel.org/v/catalog" title="Video Games">v</a>
+                    / <a href="//boards.4channel.org/vg/catalog" title="Video Game Generals">vg</a>
+                    / <a href="//boards.4channel.org/vm/catalog" title="Video Games/Multiplayer">vm</a>
+                    / <a href="//boards.4channel.org/vmg/catalog" title="Video Games/Mobile">vmg</a>
+                    / <a href="//boards.4channel.org/vr/catalog" title="Retro Games">vr</a>
+                    / <a href="//boards.4channel.org/vrpg/catalog" title="Video Games/RPG">vrpg</a>
+                    / <a href="//boards.4channel.org/vst/catalog" title="Video Games/Strategy">vst</a>
+                    / <a href="//boards.4channel.org/w/catalog" title="Anime/Wallpapers">w</a>
+                    / <a href="/wg/catalog" title="Wallpapers/General">wg</a>
+                    ] [<a href="/i/catalog" title="Oekaki">i</a>
+                    / <a href="/ic/catalog" title="Artwork/Critique">ic</a>
+                    ] [<a href="/r9k/catalog" title="ROBOT9001">r9k</a>
+                    / <a href="/s4s/catalog" title="Shit 4chan Says">s4s</a>
+                    / <a href="//boards.4channel.org/vip/catalog" title="Very Important Posts">vip</a>
+                    / <a href="//boards.4channel.org/qa/catalog" title="Question &amp; Answer">qa</a>
+                    ] [<a href="//boards.4channel.org/cm/catalog" title="Cute/Male">cm</a>
+                    / <a href="/hm/catalog" title="Handsome Men">hm</a>
+                    / <a href="//boards.4channel.org/lgbt/catalog" title="LGBT">lgbt</a>
+                    / <a href="/y/catalog" title="Yaoi">y</a>
+                    ] [<a href="//boards.4channel.org/3/catalog" title="3DCG">3</a>
+                    / <a href="/aco/catalog" title="Adult Cartoons">aco</a>
+                    / <a href="//boards.4channel.org/adv/catalog" title="Advice">adv</a>
+                    / <a href="//boards.4channel.org/an/catalog" title="Animals & Nature">an</a>
+                    / <a href="//boards.4channel.org/asp/catalog" title="Alternative Sports">asp</a>
+                    / <a href="/bant/catalog" title="International/Random">bant</a>
+                    / <a href="//boards.4channel.org/biz/catalog" title="Business & Finance">biz</a>
+                    / <a href="//boards.4channel.org/cgl/catalog" title="Cosplay & EGL">cgl</a>
+                    / <a href="//boards.4channel.org/ck/catalog" title="Food & Cooking">ck</a>
+                    / <a href="//boards.4channel.org/co/catalog" title="Comics & Cartoons">co</a>
+                    / <a href="//boards.4channel.org/diy/catalog" title="Do It Yourself">diy</a>
+                    / <a href="//boards.4channel.org/fa/catalog" title="Fashion">fa</a>
+                    / <a href="//boards.4channel.org/fit/catalog" title="Fitness">fit</a>
+                    / <a href="//boards.4channel.org/gd/catalog" title="Graphic Design">gd</a>
+                    / <a href="/hc/catalog" title="Hardcore">hc</a>
+                    / <a href="//boards.4channel.org/his/catalog" title="History & Humanities">his</a>
+                    / <a href="//boards.4channel.org/int/catalog" title="International">int</a>
+                    / <a href="//boards.4channel.org/jp/catalog" title="Otaku Culture">jp</a>
+                    / <a href="//boards.4channel.org/lit/catalog" title="Literature">lit</a>
+                    / <a href="//boards.4channel.org/mlp/catalog" title="Pony">mlp</a>
+                    / <a href="//boards.4channel.org/mu/catalog" title="Music">mu</a>
+                    / <a href="//boards.4channel.org/n/catalog" title="Transportation">n</a>
+                    / <a href="//boards.4channel.org/news/catalog" title="Current News">news</a>
+                    / <a href="//boards.4channel.org/out/catalog" title="Outdoors">out</a>
+                    / <a href="//boards.4channel.org/po/catalog" title="Papercraft & Origami">po</a>
+                    / <a href="/pol/catalog" title="Politically Incorrect">pol</a>
+                    / <a href="//boards.4channel.org/qst/catalog" title="Quests">qst</a>
+                    / <a href="//boards.4channel.org/sci/catalog" title="Science & Math">sci</a>
+                    / <a href="/soc/catalog" title="Cams & Meetups">soc</a>
+                    / <a href="//boards.4channel.org/sp/catalog" title="Sports">sp</a>
+                    / <a href="//boards.4channel.org/tg/catalog" title="Traditional Games">tg</a>
+                    / <a href="//boards.4channel.org/toy/catalog" title="Toys">toy</a>
+                    / <a href="//boards.4channel.org/trv/catalog" title="Travel">trv</a>
+                    / <a href="//boards.4channel.org/tv/catalog" title="Television & Film">tv</a>
+                    / <a href="//boards.4channel.org/vp/catalog" title="Pok&eacute;mon">vp</a>
+                    / <a href="//boards.4channel.org/wsg/catalog" title="Worksafe GIF">wsg</a>
+                    / <a href="//boards.4channel.org/wsr/catalog" title="Worksafe Requests">wsr</a>
+                    / <a href="//boards.4channel.org/x/catalog" title="Paranormal">x</a>
+                    ] 
+                </span>
+                <span id="navtopright">
+                    [<a href="javascript:void(0);" id="settingsWindowLink">Settings</a>
+                    ] [<a href="/search" title="Search">Search</a>
+                    ] [<a href="//p.4chan.org/" title="Mobile">Mobile</a>
+                    ] [<a href="//www.4chan.org/" target="_top">Home</a>
+                    ]
+                </span>
+            </div>
+            <div id="boardNavMobile" class="mobile">
+                <div class="boardSelect">
+                    <strong>Board</strong>
+                    <select id="boardSelectMobile"></select>
+                </div>
+                <div class="pageJump">
+                    <a href="#bottom">&#9660;</a>
+                    <a href="javascript:void(0);" id="settingsWindowLinkMobile">Settings</a>
+                    <a href="//p.4chan.org/">Mobile</a>
+                    <a href="//www.4chan.org" target="_top">Home</a>
+                </div>
+            </div>
+        </div>
+        <div class="boardBanner">
+            <div id="bannerCnt" class="title desktop" data-src="https://i.kym-cdn.com/photos/images/original/001/922/980/f80.png">
+				<img alt="4chan" src="https://i.kym-cdn.com/photos/images/original/001/922/980/f80.png">
+			</div>
+            <div class="boardTitle">/pol/ - Politically Incorrect</div>
+        </div>
+		<hr class="abovePostForm">
+        <div id="togglePostForm" class="mobilebtn mobile">
+            <span class="btn-wrap">
+                <span id="togglePostFormLinkMobile" class="button">Start a New Thread</span>
+            </span>
+        </div>
+		        <div id="togglePostFormLink" class="desktop">
+            [<a href="#">Start a New Thread</a>
+            ]
+        </div>
+		<hr>
+		<div id="content">
+            <div id="ctrl">
+                <div id="info">
+                    <span class="navLinks mobilebtn">
+                        <span class="btn-wrap">
+                            <a href="./" class="button">Return</a>
+                        </span>
+                        <span class="btn-wrap">
+                            <a href="./archive" class="button">Archive</a>
+                        </span>
+                        <span id="tobottom" class="btn-wrap">
+                            <span class="button">Bottom</span>
+                        </span>
+                        <span class="btn-wrap">
+                            <a id="refresh-btn" href="./catalog" class="button">Refresh</a>
+                        </span>
+                    </span>
+                    <span id="filtered-label">
+                        &mdash;Filtered threads: <span id="filtered-count"></span>
+                    </span>
+                    <span id="hidden-label">
+                        &mdash;Hidden threads: <span id="hidden-count"></span>
+                        <span class="btn-wrap">
+                            <a id="filters-clear-hidden" href="">Show</a>
+                        </span>
+                    </span>
+                    <span id="search-label">
+                        &mdash;Search results for: <span id="search-term"></span>
+                    </span>
+                </div>
+                <hr class="mobile">
+                <div id="settings" class="mobilebtn">
+                    <span class="ctrl-wrap">
+                        Sort By: 
+                        <select id="order-ctrl" size="1">
+                            <option value="alt">Bump order</option>
+                            <option value="absdate">Last reply</option>
+                            <option value="date">Creation date</option>
+                            <option value="r">Reply count</option>
+                        </select>
+                    </span>
+                    <span class="ctrl-wrap">
+                        Image Size: 
+                        <select id="size-ctrl" size="1">
+                            <option value="small">Small</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </span>
+                    <span class="ctrl-wrap">
+                        Show OP Comment: 
+                        <select id="teaser-ctrl" size="1">
+                            <option value="off">Off</option>
+                            <option value="on">On</option>
+                        </select>
+                    </span>
+                    <span class="btn-wrap">
+                        <span id="filters-ctrl" class="button">Filters</span>
+                    </span>
+                    <span class="btn-wrap">
+                        <span id="qf-ctrl" class="button">Search</span>
+                    </span>
+                    <span style="display:none" id="qf-cnt">
+                        <input type="text" id="qf-box" name="qf-box">
+                        <span id="qf-clear" class="button">&#x2716;</span>
+                    </span>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <hr>
+            <div id="threads" style="body">
+			
+			<div style="body;text-align:left;">
+			Nothing for now
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			</div>
+            <hr>
+            <span class="navLinks navLinksBottom mobilebtn">
+                <span class="btn-wrap">
+                    <a class="button">Return</a>
+                </span>
+                <span class="btn-wrap">
+                    <a href="./archive" class="button">Archive</a>
+                </span>
+                <span id="totop" class="btn-wrap">
+                    <span class="button">Top</span>
+                </span>
+                <span class="btn-wrap">
+                    <a href="./catalog" class="button">Refresh</a>
+                </span>
+            </span>
+            <span id="filtered-label-bottom">
+                &mdash;Filtered threads: <span id="filtered-count-bottom"></span>
+            </span>
+            <span id="hidden-label-bottom">
+                &mdash;Hidden threads: <span id="hidden-count-bottom"></span>
+                <span class="btn-wrap">
+                    <a id="filters-clear-hidden-bottom" href="">Show</a>
+                </span>
+            </span>
+            <span id="search-label-bottom">
+                &mdash;Search results for: <span id="search-term-bottom"></span>
+            </span>
+            <hr>
+            <div class="adc-resp-bg" data-ad-bg="176,1,5187,5f5ef92eec034,0,2,5188,5f5ef93fac7ed"></div>
+            <div id="styleSwitcher">
+                Style: 
+                <select id="styleSelector" size="1">
+                    <option value="Yotsuba New">Yotsuba</option>
+                    <option value="Yotsuba B New">Yotsuba‌ B</option>
+                    <option value="Futaba New">Futaba</option>
+                    <option value="Burichan New">Burichan</option>
+                    <option value="Tomorrow">Tomorrow</option>
+                    <option value="Photon">Photon</option>
+                </select>
+            </div>
+        </div>
 </body>
-
 </html>
