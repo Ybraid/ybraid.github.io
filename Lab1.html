@@ -1,0 +1,433 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Lab1</title><meta name="generator" content="MATLAB 9.9"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-02-02"><meta name="DC.source" content="Lab1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1></h1><!--introduction--><pre>AER 509 Control Systems
+Lab 1 - "Introduction to Matlab and Simulink"
+Darby Songolo - 500873785
+Daniel Brown - 500889023</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Introduction</a></li><li><a href="#2">Matlab Excercise - Part 1</a></li><li><a href="#3">Matlab Excercise - Part 2</a></li><li><a href="#4">Matlab Excercise - Part 3</a></li><li><a href="#5">Matlab Excercise - Part 4</a></li><li><a href="#6">Matlab Excercise - Part 5</a></li><li><a href="#7">Simulink Excercise</a></li><li><a href="#8">Conclusion</a></li></ul></div><h2 id="1">Introduction</h2><p>The purpose of this lab was to gain familiatiry with several key capabilities of MATLAB and Simulink. Within MATLAB, exercises were completed to pratice matrix manipulation, plotting of functions, symoblic operations, solving ODEs, and creating and utilizing functions. Within Simulink, a rudimentary integration feedback loop consisting of 3 control systems was created, to explore the effect of gain amplifiers on solution convergence.</p><h2 id="2">Matlab Excercise - Part 1</h2><pre class="codeinput">A = pandigital()
+
+i = A'
+ii = det(A)
+iii = inv(A)
+iv = eig(A)
+</pre><pre class="codeoutput">
+A =
+
+     7     4     3
+     9     5     2
+     1     8     6
+
+
+i =
+
+     7     9     1
+     4     5     8
+     3     2     6
+
+
+ii =
+
+   91.0000
+
+
+iii =
+
+    0.1538   -0.0000   -0.0769
+   -0.5714    0.4286    0.1429
+    0.7363   -0.5714   -0.0110
+
+
+iv =
+
+  14.9243 + 0.0000i
+   1.5378 + 1.9320i
+   1.5378 - 1.9320i
+
+</pre><h2 id="3">Matlab Excercise - Part 2</h2><pre class="codeinput">t = 0:0.25:8;
+y = cos(t)+sin(t);
+maxy = max(y);
+y = y./maxy;
+plot(t,y);
+snapnow;
+</pre><img vspace="5" hspace="5" src="Lab1_01.png" alt=""> <h2 id="4">Matlab Excercise - Part 3</h2><pre class="codeinput">syms <span class="string">s</span>
+eig_eqn = det(s*eye(3)-A)
+vpa(solve(eig_eqn))
+</pre><pre class="codeoutput"> 
+eig_eqn =
+ 
+s^3 - 18*s^2 + 52*s - 91
+ 
+ 
+ans =
+ 
+1.5378455978478779846546033907711 - 1.9319590383692622002735512790793i
+1.5378455978478779846546033907711 + 1.9319590383692622002735512790793i
+                                     14.924308804304244030690793218458
+ 
+</pre><h2 id="5">Matlab Excercise - Part 4</h2><pre class="codeinput">syms <span class="string">s</span> <span class="string">t</span> <span class="string">X</span> <span class="string">x(t)</span>
+ode = diff(x,t,2) + 4*diff(x,t) + 5*x == cosh(2*t); <span class="comment">%x(0) = 1, x'(0) = 4</span>
+L = laplace(ode,t,s)
+lap_eqn = subs(L,[laplace(x(t),t,s) x(0) subs(diff(x(t),t),t,0)], [X 1 4])
+Xs = solve(lap_eqn,X)
+xt = ilaplace(Xs)
+pretty(xt)
+diff(xt,2) + 4*diff(xt,1) + 5*xt
+t = 0;
+x_0 = eval(xt)
+Dx_0 = eval(diff(xt))
+</pre><pre class="codeoutput"> 
+L =
+ 
+4*s*laplace(x(t), t, s) - 4*x(0) - s*x(0) + s^2*laplace(x(t), t, s) - subs(diff(x(t), t), t, 0) + 5*laplace(x(t), t, s) == s/(s^2 - 4)
+ 
+ 
+lap_eqn =
+ 
+5*X - s + 4*X*s + X*s^2 - 8 == s/(s^2 - 4)
+ 
+ 
+Xs =
+ 
+(s + s/(s^2 - 4) + 8)/(s^2 + 4*s + 5)
+ 
+ 
+xt =
+ 
+exp(-2*t)/2 + exp(2*t)/34 + (8*exp(-2*t)*(cos(t) + (25*sin(t))/2))/17
+ 
+                                 /          25 sin(t) \
+                       exp(-2 t) | cos(t) + --------- | 8
+exp(-2 t)   exp(2 t)             \              2     /
+--------- + -------- + ----------------------------------
+    2          34                      17
+
+ 
+ans =
+ 
+exp(-2*t)/2 + exp(2*t)/2
+ 
+
+x_0 =
+
+     1
+
+
+Dx_0 =
+
+     4
+
+</pre><h2 id="6">Matlab Excercise - Part 5</h2><pre class="codeinput"><span class="comment">% function [A,detA,invA,powA] = pandigital(power)</span>
+<span class="comment">% %pandigital</span>
+<span class="comment">% %creates an invertible pandigital 3x3 matrix</span>
+<span class="comment">% %each digit in the matrix is unique value [1,9]</span>
+<span class="comment">% %matrix is checked if it can be inverted</span>
+<span class="comment">% %P.Cresnik 2013</span>
+<span class="comment">% %% Pandigital</span>
+<span class="comment">% if 0 &gt; power || power &gt; 10</span>
+<span class="comment">%     disp('Input Error: Out of Bounds - Default to Power = 2')</span>
+<span class="comment">%     power = 2;</span>
+<span class="comment">% end</span>
+<span class="comment">% A = zeros(3,3);</span>
+<span class="comment">% u = zeros(1,9);</span>
+<span class="comment">% m = 1;</span>
+<span class="comment">% counter = 0;</span>
+<span class="comment">% invertible = 0;</span>
+<span class="comment">%</span>
+<span class="comment">% while(invertible ~= 1)</span>
+<span class="comment">%</span>
+<span class="comment">%     while(m &lt;= 9)</span>
+<span class="comment">%</span>
+<span class="comment">%         nn = round(10*rand);</span>
+<span class="comment">%</span>
+<span class="comment">%         if (nn == 0 || nn == 10)</span>
+<span class="comment">%             continue;</span>
+<span class="comment">%         elseif (m == 1)</span>
+<span class="comment">%             u(m) = nn;</span>
+<span class="comment">%             m = m + 1;</span>
+<span class="comment">%         elseif (m &gt; 1)</span>
+<span class="comment">%             for k = 2:m</span>
+<span class="comment">%                 if nn == u(k-1)</span>
+<span class="comment">%                     counter = counter + 1;</span>
+<span class="comment">%                 end</span>
+<span class="comment">%             end</span>
+<span class="comment">%</span>
+<span class="comment">%             if counter ~= 0</span>
+<span class="comment">%                 counter = 0;</span>
+<span class="comment">%                 continue;</span>
+<span class="comment">%             else</span>
+<span class="comment">%                 u(m)=nn;</span>
+<span class="comment">%                 m = m + 1;</span>
+<span class="comment">%                 counter = 0;</span>
+<span class="comment">%             end</span>
+<span class="comment">%         end</span>
+<span class="comment">%     end</span>
+<span class="comment">%     % Form A</span>
+<span class="comment">%     for kk = 1:3</span>
+<span class="comment">%         A(1,kk)=u(kk);</span>
+<span class="comment">%         A(2,kk)=u(kk+3);</span>
+<span class="comment">%         A(3,kk)=u(kk+6);</span>
+<span class="comment">%     end</span>
+<span class="comment">%</span>
+<span class="comment">%     if(rcond(A) &lt; 0.001)</span>
+<span class="comment">%         invertible = 0;</span>
+<span class="comment">%         m = 1;</span>
+<span class="comment">%</span>
+<span class="comment">%     else</span>
+<span class="comment">%         invertible = 1;</span>
+<span class="comment">%</span>
+<span class="comment">%     end</span>
+<span class="comment">% end</span>
+<span class="comment">%</span>
+<span class="comment">% detA = det(A);</span>
+<span class="comment">% invA = inv(A);</span>
+<span class="comment">% powA = A^power;</span>
+<span class="comment">% end</span>
+
+[A,detA,invA,powA] = pandigitalDS(5)
+</pre><pre class="codeoutput">
+A =
+
+     2     8     9
+     1     5     6
+     3     4     7
+
+
+detA =
+
+    11
+
+
+invA =
+
+    1.0000   -1.8182    0.2727
+    1.0000   -1.1818   -0.2727
+   -1.0000    1.4545    0.1818
+
+
+powA =
+
+      109909      254692      356781
+       69029      159961      224079
+       85867      198976      278734
+
+</pre><h2 id="7">Simulink Excercise</h2><pre class="codeinput">K1 = 0.01;
+K2 = 1;
+K3 = 100;
+imshow(<span class="string">'simulinkoutput1.jpg'</span>)
+
+<span class="comment">% The values of GainK1, GainK2, and GainK3 show the relationship between</span>
+<span class="comment">% the input and output values of each feedback system. The gain value effectively determines how "strongly"</span>
+<span class="comment">% the system will respond to the changing value fed back into the summing junction.</span>
+<span class="comment">% With a low gain (K1), the system responds slowly to meet the desired final value. With a high gain (K3),</span>
+<span class="comment">% the system responds very quickly, however will repeatedly oscillate around the desired final value before converging.</span>
+</pre><img vspace="5" hspace="5" src="Lab1_02.png" alt=""> <h2 id="8">Conclusion</h2><p>Through this lab, a thorough understanding of some of the basics of Matlab and Simulink were developed. The succesful use of both in-built, and custom Matlab functions was shown, as well as the succesful generation and use of a simple Simulink model.</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%%
+%  AER 509 Control Systems
+%  Lab 1 - "Introduction to Matlab and Simulink"
+%  Darby Songolo - 500873785
+%  Daniel Brown - 500889023
+%
+
+%% Introduction
+% The purpose of this lab was to gain familiatiry with several key
+% capabilities of MATLAB and Simulink. Within MATLAB, exercises were
+% completed to pratice matrix manipulation, plotting of functions,
+% symoblic operations, solving ODEs, and creating and utilizing
+% functions. Within Simulink, a rudimentary integration feedback loop consisting of
+% 3 control systems was created, to explore the effect of gain amplifiers
+% on solution convergence.
+%% Matlab Excercise - Part 1
+A = pandigital()
+
+i = A'
+ii = det(A)
+iii = inv(A)
+iv = eig(A)
+
+%% Matlab Excercise - Part 2
+t = 0:0.25:8;
+y = cos(t)+sin(t);
+maxy = max(y);
+y = y./maxy;
+plot(t,y);
+snapnow;
+%% Matlab Excercise - Part 3
+syms s
+eig_eqn = det(s*eye(3)-A)
+vpa(solve(eig_eqn)) 
+%% Matlab Excercise - Part 4
+syms s t X x(t)
+ode = diff(x,t,2) + 4*diff(x,t) + 5*x == cosh(2*t); %x(0) = 1, x'(0) = 4
+L = laplace(ode,t,s)
+lap_eqn = subs(L,[laplace(x(t),t,s) x(0) subs(diff(x(t),t),t,0)], [X 1 4])
+Xs = solve(lap_eqn,X)
+xt = ilaplace(Xs)
+pretty(xt)
+diff(xt,2) + 4*diff(xt,1) + 5*xt
+t = 0;
+x_0 = eval(xt) 
+Dx_0 = eval(diff(xt))
+
+%% Matlab Excercise - Part 5
+
+% function [A,detA,invA,powA] = pandigital(power)
+% %pandigital
+% %creates an invertible pandigital 3x3 matrix
+% %each digit in the matrix is unique value [1,9]
+% %matrix is checked if it can be inverted
+% %P.Cresnik 2013
+% %% Pandigital
+% if 0 > power || power > 10
+%     disp('Input Error: Out of Bounds - Default to Power = 2')
+%     power = 2;
+% end
+% A = zeros(3,3);
+% u = zeros(1,9);
+% m = 1;
+% counter = 0;
+% invertible = 0;
+% 
+% while(invertible ~= 1)
+%     
+%     while(m <= 9)
+%         
+%         nn = round(10*rand);
+%         
+%         if (nn == 0 || nn == 10)
+%             continue;
+%         elseif (m == 1)
+%             u(m) = nn;
+%             m = m + 1;
+%         elseif (m > 1)
+%             for k = 2:m
+%                 if nn == u(k-1)
+%                     counter = counter + 1;
+%                 end
+%             end
+%             
+%             if counter ~= 0
+%                 counter = 0;
+%                 continue;
+%             else
+%                 u(m)=nn;
+%                 m = m + 1;
+%                 counter = 0;
+%             end
+%         end
+%     end
+%     % Form A
+%     for kk = 1:3
+%         A(1,kk)=u(kk);
+%         A(2,kk)=u(kk+3);
+%         A(3,kk)=u(kk+6);
+%     end
+%     
+%     if(rcond(A) < 0.001)
+%         invertible = 0;
+%         m = 1;
+% 
+%     else
+%         invertible = 1;
+% 
+%     end
+% end
+% 
+% detA = det(A);
+% invA = inv(A);
+% powA = A^power;
+% end
+
+[A,detA,invA,powA] = pandigitalDS(5)
+%% Simulink Excercise
+K1 = 0.01;
+K2 = 1;
+K3 = 100;
+imshow('simulinkoutput1.jpg')
+
+% The values of GainK1, GainK2, and GainK3 show the relationship between
+% the input and output values of each feedback system. The gain value effectively determines how "strongly" 
+% the system will respond to the changing value fed back into the summing junction. 
+% With a low gain (K1), the system responds slowly to meet the desired final value. With a high gain (K3), 
+% the system responds very quickly, however will repeatedly oscillate around the desired final value before converging.
+
+%% Conclusion
+% Through this lab, a thorough understanding of some of the basics of
+% Matlab and Simulink were developed. The succesful use of both in-built,
+% and custom Matlab functions was shown, as well as the succesful generation and use of
+% a simple Simulink model.
+% 
+
+
+
+
+
+
+##### SOURCE END #####
+--></body></html>
