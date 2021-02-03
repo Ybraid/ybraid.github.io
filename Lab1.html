@@ -70,7 +70,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
   </style></head><body><div class="content"><h1></h1><!--introduction--><pre>AER 509 Control Systems
 Lab 1 - "Introduction to Matlab and Simulink"
 Darby Songolo - 500873785
-Daniel Brown - 500889023</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Introduction</a></li><li><a href="#2">Matlab Excercise - Part 1</a></li><li><a href="#3">Matlab Excercise - Part 2</a></li><li><a href="#4">Matlab Excercise - Part 3</a></li><li><a href="#5">Matlab Excercise - Part 4</a></li><li><a href="#6">Matlab Excercise - Part 5</a></li><li><a href="#7">Simulink Excercise</a></li><li><a href="#8">Conclusion</a></li></ul></div><h2 id="1">Introduction</h2><p>The purpose of this lab was to gain familiatiry with several key capabilities of MATLAB and Simulink. Within MATLAB, exercises were completed to pratice matrix manipulation, plotting of functions, symoblic operations, solving ODEs, and creating and utilizing functions. Within Simulink, a rudimentary integration feedback loop consisting of 3 control systems was created, to explore the effect of gain amplifiers on solution convergence.</p><h2 id="2">Matlab Excercise - Part 1</h2><pre class="codeinput">A = pandigital()
+Daniel Brown - 500889023</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Introduction</a></li><li><a href="#2">Matlab Excercise - Part 1</a></li><li><a href="#3">Matlab Excercise - Part 2</a></li><li><a href="#4">Matlab Excercise - Part 3</a></li><li><a href="#5">Matlab Excercise - Part 4</a></li><li><a href="#6">Matlab Excercise - Part 5</a></li><li><a href="#7">Simulink Excercise</a></li><li><a href="#9">Conclusion</a></li></ul></div><h2 id="1">Introduction</h2><p>The purpose of this lab was to gain familiatiry with several key capabilities of MATLAB and Simulink. Within MATLAB, exercises were completed to pratice matrix manipulation, plotting of functions, symoblic operations, solving ODEs, and creating and utilizing functions. Within Simulink, a rudimentary integration feedback loop consisting of 3 control systems was created, to explore the effect of gain amplifiers on solution convergence.</p><h2 id="2">Matlab Excercise - Part 1</h2><pre class="codeinput">A = pandigital()
 
 i = A'
 ii = det(A)
@@ -79,35 +79,35 @@ iv = eig(A)
 </pre><pre class="codeoutput">
 A =
 
-     1     9     8
-     3     5     7
-     4     6     2
+     6     2     8
+     4     9     3
+     5     7     1
 
 
 i =
 
-     1     3     4
-     9     5     6
-     8     7     2
+     6     4     5
+     2     9     7
+     8     3     1
 
 
 ii =
 
-   150
+ -186.0000
 
 
 iii =
 
-   -0.2133    0.2000    0.1533
-    0.1467   -0.2000    0.1133
-   -0.0133    0.2000   -0.1467
+    0.0645   -0.2903    0.3548
+   -0.0591    0.1828   -0.0753
+    0.0914    0.1720   -0.2473
 
 
 iv =
 
-   14.5044
-   -3.7369
-   -2.7674
+   15.1943
+    3.9247
+   -3.1191
 
 </pre><h2 id="3">Matlab Excercise - Part 2</h2><pre class="codeinput">t = 0:0.25:8;
 y = cos(t)+sin(t);
@@ -121,14 +121,14 @@ vpa(solve(eig_eqn))
 </pre><pre class="codeoutput"> 
 eig_eqn =
  
-s^3 - 8*s^2 - 84*s - 150
+s^3 - 16*s^2 + 186
  
  
 ans =
  
--2.7674335980738590864795841590453
--3.7369327977787240405123853299374
- 14.504366395852583126991969488983
+-3.1190565130606603540746573230584
+ 3.9247112455915434283011445845045
+ 15.194345267469116925773512738554
  
 </pre><h2 id="5">Matlab Excercise - Part 4</h2><pre class="codeinput">syms <span class="string">s</span> <span class="string">t</span> <span class="string">X</span> <span class="string">x(t)</span>
 ode = diff(x,t,2) + 4*diff(x,t) + 5*x == cosh(2*t); <span class="comment">%x(0) = 1, x'(0) = 4</span>
@@ -253,41 +253,36 @@ Dx_0 =
 </pre><pre class="codeoutput">
 A =
 
-     7     1     4
-     9     8     5
-     2     6     3
+     5     3     1
+     2     7     4
+     9     8     6
 
 
 detA =
 
-    93
+    75
 
 
 invA =
 
-   -0.0645    0.2258   -0.2903
-   -0.1828    0.1398    0.0108
-    0.4086   -0.4301    0.5054
+    0.1333   -0.1333    0.0667
+    0.3200    0.2800   -0.2400
+   -0.6267   -0.1733    0.3867
 
 
 powA =
 
-      197514      142353      127521
-      461091      331905      297741
-      268782      193272      173499
+       97230      121398       71691
+      195840      244359      144378
+      300495      374937      221379
 
 </pre><h2 id="7">Simulink Excercise</h2><pre class="codeinput">K1 = 0.01;
 K2 = 1;
 K3 = 100;
 opengl <span class="string">hardware</span>
-imshow(<span class="string">'simulinkoutput1.jpg'</span>)
-
-<span class="comment">% The values of GainK1, GainK2, and GainK3 show the relationship between</span>
-<span class="comment">% the input and output values of each feedback system. The gain value effectively determines how "strongly"</span>
-<span class="comment">% the system will respond to the changing value fed back into the summing junction.</span>
-<span class="comment">% With a low gain (K1), the system responds slowly to meet the desired final value. With a high gain (K3),</span>
-<span class="comment">% the system responds very quickly, however will repeatedly oscillate around the desired final value before converging.</span>
-</pre><img vspace="5" hspace="5" src="Lab1_02.png" alt=""> <h2 id="8">Conclusion</h2><p>Through this lab, a thorough understanding of some of the basics of Matlab and Simulink were developed. The succesful use of both in-built, and custom Matlab functions was shown, as well as the succesful generation and use of a simple Simulink model.</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020b</a><br></p></div><!--
+figure, imshow(<span class="string">'simulinkoutput1.jpg'</span>), snapnow;
+figure, imshow(<span class="string">'simulinkoutput2.jpg'</span>), snapnow;
+</pre><img vspace="5" hspace="5" src="Lab1_02.png" alt=""> <img vspace="5" hspace="5" src="Lab1_03.png" alt=""> <p>The values of GainK1, GainK2, and GainK3 show the relationship between the input and output values of each feedback system. The gain value effectively determines how "strongly" the system will respond to the changing value fed back into the summing junction. With a low gain (K1), the system responds slowly to meet the desired final value. With a high gain (K3), the system responds very quickly, however will repeatedly oscillate around the desired final value before converging.</p><h2 id="9">Conclusion</h2><p>Through this lab, a thorough understanding of some of the basics of Matlab and Simulink were developed. The succesful use of both in-built, and custom Matlab functions was shown, as well as the succesful generation and use of a simple Simulink model.</p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %%
 %  AER 509 Control Systems
@@ -411,8 +406,9 @@ K1 = 0.01;
 K2 = 1;
 K3 = 100;
 opengl hardware
-imshow('simulinkoutput1.jpg')
-
+figure, imshow('simulinkoutput1.jpg'), snapnow;
+figure, imshow('simulinkoutput2.jpg'), snapnow;
+%%
 % The values of GainK1, GainK2, and GainK3 show the relationship between
 % the input and output values of each feedback system. The gain value effectively determines how "strongly" 
 % the system will respond to the changing value fed back into the summing junction. 
