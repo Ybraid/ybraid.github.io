@@ -79,35 +79,35 @@ iv = eig(A)
 </pre><pre class="codeoutput">
 A =
 
-     7     4     3
-     9     5     2
-     1     8     6
+     1     9     8
+     3     5     7
+     4     6     2
 
 
 i =
 
-     7     9     1
-     4     5     8
-     3     2     6
+     1     3     4
+     9     5     6
+     8     7     2
 
 
 ii =
 
-   91.0000
+   150
 
 
 iii =
 
-    0.1538   -0.0000   -0.0769
-   -0.5714    0.4286    0.1429
-    0.7363   -0.5714   -0.0110
+   -0.2133    0.2000    0.1533
+    0.1467   -0.2000    0.1133
+   -0.0133    0.2000   -0.1467
 
 
 iv =
 
-  14.9243 + 0.0000i
-   1.5378 + 1.9320i
-   1.5378 - 1.9320i
+   14.5044
+   -3.7369
+   -2.7674
 
 </pre><h2 id="3">Matlab Excercise - Part 2</h2><pre class="codeinput">t = 0:0.25:8;
 y = cos(t)+sin(t);
@@ -121,14 +121,14 @@ vpa(solve(eig_eqn))
 </pre><pre class="codeoutput"> 
 eig_eqn =
  
-s^3 - 18*s^2 + 52*s - 91
+s^3 - 8*s^2 - 84*s - 150
  
  
 ans =
  
-1.5378455978478779846546033907711 - 1.9319590383692622002735512790793i
-1.5378455978478779846546033907711 + 1.9319590383692622002735512790793i
-                                     14.924308804304244030690793218458
+-2.7674335980738590864795841590453
+-3.7369327977787240405123853299374
+ 14.504366395852583126991969488983
  
 </pre><h2 id="5">Matlab Excercise - Part 4</h2><pre class="codeinput">syms <span class="string">s</span> <span class="string">t</span> <span class="string">X</span> <span class="string">x(t)</span>
 ode = diff(x,t,2) + 4*diff(x,t) + 5*x == cosh(2*t); <span class="comment">%x(0) = 1, x'(0) = 4</span>
@@ -253,32 +253,33 @@ Dx_0 =
 </pre><pre class="codeoutput">
 A =
 
-     2     8     9
-     1     5     6
-     3     4     7
+     7     1     4
+     9     8     5
+     2     6     3
 
 
 detA =
 
-    11
+    93
 
 
 invA =
 
-    1.0000   -1.8182    0.2727
-    1.0000   -1.1818   -0.2727
-   -1.0000    1.4545    0.1818
+   -0.0645    0.2258   -0.2903
+   -0.1828    0.1398    0.0108
+    0.4086   -0.4301    0.5054
 
 
 powA =
 
-      109909      254692      356781
-       69029      159961      224079
-       85867      198976      278734
+      197514      142353      127521
+      461091      331905      297741
+      268782      193272      173499
 
 </pre><h2 id="7">Simulink Excercise</h2><pre class="codeinput">K1 = 0.01;
 K2 = 1;
 K3 = 100;
+opengl <span class="string">hardware</span>
 imshow(<span class="string">'simulinkoutput1.jpg'</span>)
 
 <span class="comment">% The values of GainK1, GainK2, and GainK3 show the relationship between</span>
@@ -409,6 +410,7 @@ Dx_0 = eval(diff(xt))
 K1 = 0.01;
 K2 = 1;
 K3 = 100;
+opengl hardware
 imshow('simulinkoutput1.jpg')
 
 % The values of GainK1, GainK2, and GainK3 show the relationship between
