@@ -1,0 +1,447 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Lab2_darby</title><meta name="generator" content="MATLAB 9.9"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-02-23"><meta name="DC.source" content="Lab2_darby.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1></h1><!--introduction--><pre>AER 509 Control Systems
+Lab 2 - Introduction to System Identification
+Darby Songolo - 500873785
+Daniel Brown  - 500889023</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Introduction</a></li><li><a href="#2">Matlab Exercises - Part A - 1: Curve Fitting</a></li><li><a href="#3">Matlab Exercises - Part A - 2: Analysis of Results</a></li><li><a href="#4">Matlab Exercises - Part B - 1: Data Load and Variables</a></li><li><a href="#5">Matlab Exercises - Part B - 2: System Parameters and Transfer Function</a></li><li><a href="#6">Matlab Exercises - Part B - 3: Manual Fit versus Exp. Data</a></li><li><a href="#7">Matlab Exercises - Part B - 4: Using the System Identification Toolbox</a></li><li><a href="#8">Matlab Exercises - Part B - 5: Transfer Function Comparison</a></li><li><a href="#11">Matlab Exercises - Part C - Higher Order Model Identification</a></li><li><a href="#13">Conclusion</a></li></ul></div><h2 id="1">Introduction</h2><pre>The purpose of this laboratory experiment was to create and analyze
+several mathematical models of responses given by the Quanser QUBE-Servo
+2 system. System identification was be preformed through implementing both
+manual, and MATLAB toolbox driven methods. In Part A, a linear curve fit
+was created to model voltage and speed data for the device. In Part B, systems
+identification was used to create first order models for step and sine
+input data. Using a similar methodology, Part C required the implementation of
+higher order transfer functions to represent a merged system of 2 sets of signal data.</pre><h2 id="2">Matlab Exercises - Part A - 1: Curve Fitting</h2><pre class="codeinput">load(<span class="string">'Lab2partb_data.mat'</span>);
+load(<span class="string">'Data_voltage.mat'</span>);
+voltage = Data.V;
+speeds = Data.S;
+fT = fittype({<span class="string">'x'</span>});
+lin_fit = fit(voltage,speeds,fT);
+lin_fit_data = lin_fit.a.*speeds;
+
+plot(voltage,speeds,<span class="string">'ko'</span>,speeds,lin_fit_data,<span class="string">'r--'</span>);
+legend(<span class="string">'Data'</span>,<span class="string">'Linear Approximation'</span>,<span class="string">'Location'</span>,<span class="string">'northwest'</span>);
+xlabel(<span class="string">'Voltage (V)'</span>); ylabel(<span class="string">'Speed (RPM)'</span>);
+title(<span class="string">'Speed vs Voltage'</span>);
+axis([-6 6 -600 600]);
+grid <span class="string">on</span>;
+text(-0.5,246.16,[<span class="string">'y = '</span> num2str(lin_fit.a) <span class="string">'*x \rightarrow'</span>]);
+set(gca,<span class="string">'XMinorTick'</span>,<span class="string">'on'</span>,<span class="string">'YMinorTick'</span>,<span class="string">'on'</span>);
+</pre><img vspace="5" hspace="5" src="Lab2_darby_01.png" alt=""> <h2 id="3">Matlab Exercises - Part A - 2: Analysis of Results</h2><pre>There were no regions of non-linearity in the experimental data.</pre><h2 id="4">Matlab Exercises - Part B - 1: Data Load and Variables</h2><pre class="codeinput">load(<span class="string">'Lab2partb_data.mat'</span>)
+
+v_step = Data.v_step;
+
+t_step = step_data.time;
+u_step = step_data.signals.values(:,1); <span class="comment">%input</span>
+y_step = step_data.signals.values(:,2); <span class="comment">%output</span>
+
+
+t_sine = sine_data.time;
+u_sine = sine_data.signals.values(:,1); <span class="comment">%input</span>
+y_sine = sine_data.signals.values(:,2); <span class="comment">%output</span>
+</pre><h2 id="5">Matlab Exercises - Part B - 2: System Parameters and Transfer Function</h2><pre class="codeinput">mean_steady = mean(y_step(270:end));
+
+sixthree_step = 0.63*mean_steady;
+
+recip_a = interp1(y_step(230:257,1),t_step(230:257,1)-1,sixthree_step);
+
+a = 1/recip_a;
+a = 1./(t_step((sixthree_step*0.98&lt;y_step &amp; y_step&lt;sixthree_step*1.02))-1);
+k = a*mean_steady/v_step;
+sys_manual = tf(k,[1 a]);
+t_step_new = (0:0.002:0.5)';
+y_step_fit = step(v_step*sys_manual,t_step_new);
+</pre><h2 id="6">Matlab Exercises - Part B - 3: Manual Fit versus Exp. Data</h2><pre class="codeinput">figure
+plot(t_step_new,y_step(230:480,1),t_step_new,y_step_fit)
+title(<span class="string">'Step Response: Manual Fit v Exp. Data'</span>);
+ylabel(<span class="string">'Speed [rad/s]'</span>);
+xlabel(<span class="string">'Time [s]'</span>);
+text(0.15,2,[<span class="string">'G(s) = '</span>,num2str(k),<span class="string">'/(s + '</span>,num2str(a),<span class="string">')'</span>]);
+legend(<span class="string">'Exp. Data'</span>,<span class="string">'Manual Fit'</span>,<span class="string">'Location'</span>,<span class="string">'southeast'</span>);
+</pre><img vspace="5" hspace="5" src="Lab2_darby_02.png" alt=""> <h2 id="7">Matlab Exercises - Part B - 4: Using the System Identification Toolbox</h2><pre class="codeinput"><span class="comment">%First for the step response</span>
+step_id = iddata(y_step,u_step,0.002);
+
+id_step = tfest(step_id,1);
+sys_step = tf(id_step.num,id_step.den);
+
+<span class="comment">%Next for the sine response</span>
+sine_id = iddata(y_sine,u_sine,0.002);
+
+id_sine = tfest(sine_id,1);
+sys_sine = tf(id_sine.num,id_sine.den);
+</pre><h2 id="8">Matlab Exercises - Part B - 5: Transfer Function Comparison</h2><pre class="codeinput">sys_manual
+sys_step
+sys_sine
+</pre><pre class="codeoutput">
+sys_manual =
+ 
+    59.78
+  ---------
+  s + 35.71
+ 
+Continuous-time transfer function.
+
+
+sys_step =
+ 
+    59.9
+  ---------
+  s + 35.78
+ 
+Continuous-time transfer function.
+
+
+sys_sine =
+ 
+    55.93
+  ---------
+  s + 46.05
+ 
+Continuous-time transfer function.
+
+</pre><pre class="codeinput">figure
+hold <span class="string">on</span>
+
+plot(t_step_new,y_step_fit)
+
+y_step_tfest = step(v_step*sys_step,t_step_new);
+plot(t_step_new,y_step_tfest,<span class="string">'--'</span>,<span class="string">'Color'</span>,<span class="string">'#D95319'</span>);
+
+y_sine_tfest = step(sys_sine,t_step_new);
+plot(t_step_new, y_sine_tfest,<span class="string">'-.'</span>,<span class="string">'Color'</span>,<span class="string">'#A2142F'</span>);
+
+legend(<span class="string">'Manual Fit'</span>,<span class="string">'Tfest Fit'</span>,<span class="string">'Sine Fit'</span>,<span class="string">'Location'</span>,<span class="string">'Best'</span>);
+hold <span class="string">off</span>
+snapnow;
+close <span class="string">all</span>
+</pre><img vspace="5" hspace="5" src="Lab2_darby_03.png" alt=""> <pre>The "a" and "k" parameters for the two transfer functions based off of
+the step input were within 0.2% of each other, respectively. As such,
+the manual fit for the response was very acurate. The transfer function
+for the sine response was not easily comparable with the step response
+transfer functions. First-order systems are not well suited for modelling
+responses that have large non-settling oscillations. Upon analysis, the
+sine transfer function failed to accurately represent the response. A
+higher-order system would be better suited for modelling this response
+In order to improve the parameter estimation for the manual fit, a
+more accurate selection for the steady state region of the response
+could be chosen. This would mean a more accurate mean steady state
+value. The transfer function is unitless. One reason for using a step
+input to test the response of an unknown system is that it is the
+simplest type of input to generate. A second reason is that using a step
+input allows for the easiest measurement of the systems response.</pre><h2 id="11">Matlab Exercises - Part C - Higher Order Model Identification</h2><pre class="codeinput">load(<span class="string">'PartB_sine_high'</span>);
+load(<span class="string">'PartB_step_high'</span>);
+
+v_step = Data.v_step;
+
+t_step_high = step_data_high.time;
+u_step_high = step_data_high.signals.values(:,1); <span class="comment">%input</span>
+y_step_high = step_data_high.signals.values(:,2); <span class="comment">%output</span>
+
+
+t_sine_high = sine_data_high.time;
+u_sine_high = sine_data_high.signals.values(:,1); <span class="comment">%input</span>
+y_sine_high = sine_data_high.signals.values(:,2); <span class="comment">%output</span>
+
+
+dt_high=0.002;
+
+step_id_high = iddata(y_step_high,u_step_high,dt_high);
+sine_id_high = iddata(y_sine_high,u_sine_high,dt_high);
+
+merge_id_high = merge(step_id_high,sine_id_high);
+
+
+id_step_merge = tfest(merge_id_high,4)
+</pre><pre class="codeoutput">
+id_step_merge =
+ 
+  From input "u1" to output "y1":
+   -0.001999 s^3 + 1.994 s^2 + 5.007 s + 1.002
+  ---------------------------------------------
+  s^4 + 1.994 s^3 + 4.995 s^2 + 5.006 s + 1.002
+ 
+Continuous-time identified transfer function.
+
+Parameterization:
+   Number of poles: 4   Number of zeros: 3
+   Number of free coefficients: 8
+   Use "tfdata", "getpvec", "getcov" for parameters and their uncertainties.
+
+Status:                                                   
+Estimated using TFEST on time domain data "merge_id_high".
+Fit to estimation data: [100 100]%                        
+FPE: 3.08e-29, MSE: [4.061e-29 2.089e-29]                 
+</pre><pre class="codeinput">[num_roots,demom_roots]  = tfdata(id_step_merge,<span class="string">'v'</span>)
+
+t_step_high_new = (0:dt_high:15)';
+y_step_high_fit = step(id_step_merge,t_step_high_new);
+
+plot(t_step_high_new,y_step_high(501:8001),t_step_high_new,y_step_high_fit,<span class="string">'--'</span>)
+legend(<span class="string">'Exp. Data'</span>, <span class="string">'Manual Fit'</span>);
+title(<span class="string">'Step Response High: Manual Fit v Exp. Data'</span>);
+xlabel(<span class="string">'Time [s]'</span>);
+ylabel(<span class="string">'Speed [rad/s]'</span>);
+</pre><pre class="codeoutput">
+num_roots =
+
+         0   -0.0020    1.9940    5.0070    1.0020
+
+
+demom_roots =
+
+    1.0000    1.9940    4.9950    5.0060    1.0020
+
+</pre><img vspace="5" hspace="5" src="Lab2_darby_04.png" alt=""> <h2 id="13">Conclusion</h2><pre>Through this laboratory experiment, familiarity was gained with the Systems Identification capabilities and
+toolboxes of MATLAB. The forms of analysis conducted included curve fitting, and first order and higher order
+transfer function generation. Each of these models were found to create accurate mathematical representations of
+the Quanser QUBE-Servo 2 system and its behaviour.</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%%
+%  AER 509 Control Systems
+%  Lab 2 - Introduction to System Identification 
+%  Darby Songolo - 500873785  
+%  Daniel Brown  - 500889023
+%
+
+%% Introduction
+%  The purpose of this laboratory experiment was to create and analyze
+%  several mathematical models of responses given by the Quanser QUBE-Servo
+%  2 system. System identification was be preformed through implementing both
+%  manual, and MATLAB toolbox driven methods. In Part A, a linear curve fit
+%  was created to model voltage and speed data for the device. In Part B, systems
+%  identification was used to create first order models for step and sine
+%  input data. Using a similar methodology, Part C required the implementation of 
+%  higher order transfer functions to represent a merged system of 2 sets of signal data. 
+%
+%% Matlab Exercises - Part A - 1: Curve Fitting
+
+load('Lab2partb_data.mat');
+load('Data_voltage.mat');
+voltage = Data.V;
+speeds = Data.S;
+fT = fittype({'x'});
+lin_fit = fit(voltage,speeds,fT);
+lin_fit_data = lin_fit.a.*speeds;
+
+plot(voltage,speeds,'ko',speeds,lin_fit_data,'rREPLACE_WITH_DASH_DASH');
+legend('Data','Linear Approximation','Location','northwest');
+xlabel('Voltage (V)'); ylabel('Speed (RPM)');
+title('Speed vs Voltage');
+axis([-6 6 -600 600]);
+grid on;
+text(-0.5,246.16,['y = ' num2str(lin_fit.a) '*x \rightarrow']);
+set(gca,'XMinorTick','on','YMinorTick','on');
+
+%% Matlab Exercises - Part A - 2: Analysis of Results
+%  There were no regions of non-linearity in the experimental data.
+%
+%% Matlab Exercises - Part B - 1: Data Load and Variables
+
+load('Lab2partb_data.mat')
+
+v_step = Data.v_step;
+
+t_step = step_data.time;
+u_step = step_data.signals.values(:,1); %input
+y_step = step_data.signals.values(:,2); %output
+
+
+t_sine = sine_data.time;
+u_sine = sine_data.signals.values(:,1); %input
+y_sine = sine_data.signals.values(:,2); %output
+
+%% Matlab Exercises - Part B - 2: System Parameters and Transfer Function
+
+mean_steady = mean(y_step(270:end));
+
+sixthree_step = 0.63*mean_steady;
+
+recip_a = interp1(y_step(230:257,1),t_step(230:257,1)-1,sixthree_step);
+
+a = 1/recip_a;
+a = 1./(t_step((sixthree_step*0.98<y_step & y_step<sixthree_step*1.02))-1);
+k = a*mean_steady/v_step;
+sys_manual = tf(k,[1 a]);
+t_step_new = (0:0.002:0.5)';
+y_step_fit = step(v_step*sys_manual,t_step_new);
+
+
+
+%% Matlab Exercises - Part B - 3: Manual Fit versus Exp. Data
+
+figure
+plot(t_step_new,y_step(230:480,1),t_step_new,y_step_fit)
+title('Step Response: Manual Fit v Exp. Data');
+ylabel('Speed [rad/s]');
+xlabel('Time [s]');
+text(0.15,2,['G(s) = ',num2str(k),'/(s + ',num2str(a),')']);
+legend('Exp. Data','Manual Fit','Location','southeast');
+
+%% Matlab Exercises - Part B - 4: Using the System Identification Toolbox
+
+%First for the step response
+step_id = iddata(y_step,u_step,0.002);
+
+id_step = tfest(step_id,1);
+sys_step = tf(id_step.num,id_step.den);
+
+%Next for the sine response
+sine_id = iddata(y_sine,u_sine,0.002);
+
+id_sine = tfest(sine_id,1);
+sys_sine = tf(id_sine.num,id_sine.den);
+
+%% Matlab Exercises - Part B - 5: Transfer Function Comparison
+
+sys_manual
+sys_step
+sys_sine
+
+%%
+
+figure 
+hold on
+
+plot(t_step_new,y_step_fit)
+
+y_step_tfest = step(v_step*sys_step,t_step_new);
+plot(t_step_new,y_step_tfest,'REPLACE_WITH_DASH_DASH','Color','#D95319');
+
+y_sine_tfest = step(sys_sine,t_step_new);
+plot(t_step_new, y_sine_tfest,'-.','Color','#A2142F');
+
+legend('Manual Fit','Tfest Fit','Sine Fit','Location','Best');
+hold off
+snapnow;
+close all
+
+%%
+%  The "a" and "k" parameters for the two transfer functions based off of 
+%  the step input were within 0.2% of each other, respectively. As such, 
+%  the manual fit for the response was very acurate. The transfer function 
+%  for the sine response was not easily comparable with the step response
+%  transfer functions. First-order systems are not well suited for modelling
+%  responses that have large non-settling oscillations. Upon analysis, the
+%  sine transfer function failed to accurately represent the response. A
+%  higher-order system would be better suited for modelling this response
+%  In order to improve the parameter estimation for the manual fit, a
+%  more accurate selection for the steady state region of the response
+%  could be chosen. This would mean a more accurate mean steady state
+%  value. The transfer function is unitless. One reason for using a step
+%  input to test the response of an unknown system is that it is the
+%  simplest type of input to generate. A second reason is that using a step 
+%  input allows for the easiest measurement of the systems response.
+%
+%% Matlab Exercises - Part C - Higher Order Model Identification
+
+load('PartB_sine_high');
+load('PartB_step_high');
+
+v_step = Data.v_step;
+
+t_step_high = step_data_high.time;
+u_step_high = step_data_high.signals.values(:,1); %input
+y_step_high = step_data_high.signals.values(:,2); %output
+
+
+t_sine_high = sine_data_high.time;
+u_sine_high = sine_data_high.signals.values(:,1); %input
+y_sine_high = sine_data_high.signals.values(:,2); %output
+
+
+dt_high=0.002;
+
+step_id_high = iddata(y_step_high,u_step_high,dt_high);
+sine_id_high = iddata(y_sine_high,u_sine_high,dt_high);
+
+merge_id_high = merge(step_id_high,sine_id_high);
+
+
+id_step_merge = tfest(merge_id_high,4)
+%%
+[num_roots,demom_roots]  = tfdata(id_step_merge,'v')
+
+t_step_high_new = (0:dt_high:15)';
+y_step_high_fit = step(id_step_merge,t_step_high_new);
+
+plot(t_step_high_new,y_step_high(501:8001),t_step_high_new,y_step_high_fit,'REPLACE_WITH_DASH_DASH')
+legend('Exp. Data', 'Manual Fit');
+title('Step Response High: Manual Fit v Exp. Data');
+xlabel('Time [s]');
+ylabel('Speed [rad/s]');
+
+%% Conclusion
+%  Through this laboratory experiment, familiarity was gained with the Systems Identification capabilities and 
+%  toolboxes of MATLAB. The forms of analysis conducted included curve fitting, and first order and higher order 
+%  transfer function generation. Each of these models were found to create accurate mathematical representations of 
+%  the Quanser QUBE-Servo 2 system and its behaviour. 
+
+
+##### SOURCE END #####
+--></body></html>
